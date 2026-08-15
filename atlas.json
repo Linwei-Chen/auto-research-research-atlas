@@ -1,0 +1,3379 @@
+{
+  "meta": {
+    "domain": "Auto-Research",
+    "title": "Auto-Research：从研究代理到自驱实验室",
+    "subtitle": "一张区分科研闭环深度、证据强弱与真实自主性的可审计研究地图",
+    "updated": "2026-08-09",
+    "audience": "研究人员与具备基础背景的专业读者",
+    "scope_note": "覆盖奠基工作至 2026-08-09 的英文与中文可核验来源；核心对象必须跨越至少两个实质科研环节并产出可检查结果，另纳入定义路线、评测失败或治理边界的关键工作；普通搜索写作工具、传统 AutoML 和纯营销项目排除。",
+    "axis_label": "科研闭环覆盖深度",
+    "overview": "Auto-Research 不是单一产品，而是让人工智能参与问题形成、证据综合、实验执行、结果评价与迭代更新的一组科研工作流。当前最可靠的进展集中在反馈快速、目标可量化的数字环境；开放式创新、长程复现、实体实验安全与独立验证仍明显依赖人类。按路线阅读主贡献，按同心层级判断实际闭环深度，再结合证据等级区分演示、预印本与经同行评议结果。",
+    "coverage_level": "L2",
+    "language": "zh-CN"
+  },
+  "routes": [
+    {
+      "id": "knowledge-ideation",
+      "label": "知识综合与研究构想",
+      "short": "知识与构想",
+      "description": "从论文、知识图谱或结构化证据中发现空白，生成、比较和修订研究问题、假设与方案；不把普通问答或单纯摘要算作科研闭环。",
+      "question": "系统的主要贡献是否是把已有知识转化为可检验的新问题、假设或研究方案？",
+      "color": "#2B6F92",
+      "text_color": "#18445B",
+      "order": 0
+    },
+    {
+      "id": "paradigm-orchestration",
+      "label": "范式与端到端编排",
+      "short": "端到端编排",
+      "description": "连接构想、计划、执行、分析、写作与评审等多个阶段，研究整体工作流、角色分工、审计轨迹和人机控制点。",
+      "question": "工作的核心创新是否在于跨阶段组织完整研究，而不是优化某一专业环节？",
+      "color": "#8B5A2B",
+      "text_color": "#5D3B1C",
+      "order": 1
+    },
+    {
+      "id": "ml-research-loop",
+      "label": "机器学习研发闭环",
+      "short": "机器学习闭环",
+      "description": "代理修改代码、训练模型、读取量化反馈并保留、回退或组合实验；与预定义搜索空间中的传统 AutoML 以是否存在语义研究决策相区分。",
+      "question": "系统是否真正执行机器学习实验，并让观测结果驱动下一轮代码或方法变更？",
+      "color": "#2F6B4F",
+      "text_color": "#1F4936",
+      "order": 2
+    },
+    {
+      "id": "domain-discovery",
+      "label": "领域科学发现",
+      "short": "领域发现",
+      "description": "在生物、医学、化学、材料、社会科学等专业领域调用模型、数据与工具，形成并验证领域假设或候选发现；实体实验可由人类执行。",
+      "question": "主贡献是否是利用专业知识和数据产生可验证的领域发现？",
+      "color": "#73558F",
+      "text_color": "#4D3960",
+      "order": 3
+    },
+    {
+      "id": "physical-lab",
+      "label": "实体自驱实验室",
+      "short": "实体实验室",
+      "description": "将研究决策与机器人、仪器和物质世界反馈闭合，覆盖实验选择、执行、表征与后续更新；人工搬运或关键判断必须明确披露。",
+      "question": "系统是否能让现实实验结果自动影响下一次实体实验，而不只是给人类建议？",
+      "color": "#A24748",
+      "text_color": "#6F2D2E",
+      "order": 4
+    },
+    {
+      "id": "evaluation-governance",
+      "label": "评测、复现与治理",
+      "short": "评测与治理",
+      "description": "用基准、复现、外部审计、风险分析和安全控制验证研究代理的能力边界，特别关注泄漏、长程失败、同质化和现实危害。",
+      "question": "工作是否主要回答系统是否可靠、可复现、可审计或可安全部署？",
+      "color": "#52606D",
+      "text_color": "#34404A",
+      "order": 5
+    }
+  ],
+  "levels": [
+    {
+      "id": 0,
+      "label": "组件或单环节",
+      "short": "组件",
+      "description": "只完成或评价文献综合、构想、评审、安全判断等单一环节，或提供领域定义与治理框架；没有执行反馈闭环。",
+      "order": 0
+    },
+    {
+      "id": 1,
+      "label": "多环节人审工作流",
+      "short": "人审工作流",
+      "description": "人工智能连接多个科研环节并产生中间产物，但关键选择、实验执行或是否进入下一轮仍由人类决定。",
+      "order": 1
+    },
+    {
+      "id": 2,
+      "label": "数字执行闭环",
+      "short": "数字闭环",
+      "description": "系统能在代码、模拟器或数据分析环境中执行实验，依据可观察结果自主修改下一步，并留下可检查轨迹。",
+      "order": 2
+    },
+    {
+      "id": 3,
+      "label": "实体实验闭环",
+      "short": "实体闭环",
+      "description": "研究决策、机器人或仪器执行、现实表征和下一轮实验选择构成闭环；仍需区分完全闭环、人工辅助和安全停机点。",
+      "order": 3
+    }
+  ],
+  "papers": [
+    {
+      "id": "scimon",
+      "title": "SciMON: Scientific Inspiration Machines Optimized for Novelty",
+      "title_local": "SciMON：面向新颖性的科学灵感生成",
+      "short_title": "SciMON",
+      "year": 2024,
+      "venue": "ACL 2024",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "knowledge-ideation",
+      "routes": [
+        "knowledge-ideation"
+      ],
+      "level": 0,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "用检索到的既有论文作为灵感，并反复检查与改写候选想法，显式优化文献意义上的新颖性。",
+      "problem": "直接生成科学想法容易复述既有工作，且“语言上新奇”不等于技术上有深度。",
+      "mechanism": "系统把背景问题与检索论文配对，生成自然语言研究方向，再用既有文献相似性反馈进行多轮更新。",
+      "mechanism_steps": [
+        "检索与背景问题相关的灵感论文",
+        "生成候选研究方向",
+        "对照既有文献评估新颖性并迭代改写"
+      ],
+      "evidence": [
+        "正式论文报告，普通 GPT-4 想法的技术深度和新颖性偏低，显式检索与新颖性优化只能部分缓解。"
+      ],
+      "limitations": [
+        "评价主要依赖自动指标和人工判断，尚未执行候选实验。",
+        "研究构想只是科研闭环的起点，不能据此声称完成发现。"
+      ],
+      "implications": [
+        "构想代理需要外部文献查重，而非依赖模型自评。",
+        "后续系统应把新颖性与可执行性、价值和证伪性联合评价。"
+      ],
+  "paper_url": "https://aclanthology.org/2024.acl-long.18/",
+  "source_note": "核验 ACL Anthology 正式论文页、摘要、元数据与代码入口。",
+  "evidence_locations": [
+    "ACL 正式 PDF Abstract、Figure 1 与 §2.1，论文页 279–281：文献灵感检索、自然语言构想与迭代新颖性优化",
+    "ACL 正式 PDF §3.1–§3.3 与 §4.1/Table 2–3，论文页 282–285：检索、生成、迭代机制及专家人工评价",
+    "ACL 正式 PDF §4.2 与 §6，论文页 286–287：通用或表面组合失败、数据、系统、评价与记忆污染边界"
+  ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "doi": "10.18653/v1/2024.acl-long.18",
+      "authors": [
+        "Qingyun Wang",
+        "Doug Downey",
+        "Heng Ji",
+        "Tom Hope"
+      ],
+      "code_url": "https://github.com/eaglew/clbd",
+      "tags": [
+        "文献检索",
+        "新颖性",
+        "构想生成"
+      ]
+    },
+    {
+      "id": "llm-novel-ideas",
+      "title": "Can LLMs Generate Novel Research Ideas? A Large-Scale Human Study with 100+ NLP Researchers",
+      "title_local": "大模型能否生成新颖研究想法：百余名自然语言处理研究者的盲评",
+      "short_title": "百人研究者构想盲评",
+      "year": 2025,
+      "venue": "ICLR 2025",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "knowledge-ideation",
+      "routes": [
+        "knowledge-ideation",
+        "evaluation-governance"
+      ],
+      "level": 0,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "把大模型构想代理与人类专家放入受控盲评，给出了“较新颖但可行性略弱、生成多样性不足”的直接证据。",
+      "problem": "此前构想系统常用模型自评，无法排除作者身份、写作风格和评价者偏好等混杂。",
+      "mechanism": "研究招募百余名自然语言处理研究者撰写与盲评想法，并控制想法生成和评价中的主要混杂因素。",
+      "mechanism_steps": [
+        "人类专家与代理分别生成研究想法",
+        "匿名化后由研究者按新颖性、可行性等维度评价",
+        "分析自评失败和多样性不足"
+      ],
+      "evidence": [
+        "大模型想法的新颖性评分显著高于人类专家（p<0.05），但可行性略弱。",
+        "论文同时发现大模型自评不可靠，且大量生成出现缺乏多样性的问题。"
+      ],
+      "limitations": [
+        "研究限定在自然语言处理构想，未验证想法经实验后是否成立。",
+        "盲评衡量感知质量，不等同于长期科学价值。"
+      ],
+      "implications": [
+        "评价科研构想必须把新颖性、可行性和多样性拆开。",
+        "人类盲评是检验代理构想能力的最低证据标准之一。"
+      ],
+  "paper_url": "https://openreview.net/forum?id=M23dTGWCZy",
+  "source_note": "核验 ICLR 2025 正式论文 PDF、百余名研究者盲评设计与多样性分析；主入口使用正确的 OpenReview 会刊记录。",
+  "evidence_locations": [
+    "ICLR 正式 PDF Figure 1–2 与 §2–§4，pp.1–6：49 个人类构想、每条件 49 项、79 位盲评者、题材与写作风格控制",
+    "ICLR 正式 PDF §5 与 Table 5，pp.7–8：三种统计检验及构想新颖性、可行性与总体评分",
+    "ICLR 正式 PDF §7.1–§7.2 与 Figure 3，pp.9–10：4,000 个种子构想仅约 200 个非重复构想，以及模型自评不可靠"
+  ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q3"
+      },
+  "authors": [
+    "Chenglei Si",
+    "Diyi Yang",
+    "Tatsunori Hashimoto"
+  ],
+  "code_url": "https://github.com/NoviScl/AI-Researcher",
+      "tags": [
+        "人类盲评",
+        "新颖性",
+        "多样性"
+      ]
+    },
+    {
+      "id": "researchagent",
+      "title": "ResearchAgent: Iterative Research Idea Generation over Scientific Literature with Large Language Models",
+      "title_local": "ResearchAgent：基于科学文献的迭代研究构想生成",
+      "short_title": "ResearchAgent",
+      "year": 2025,
+      "venue": "NAACL 2025",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "knowledge-ideation",
+      "routes": [
+        "knowledge-ideation",
+        "paradigm-orchestration"
+      ],
+      "level": 1,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "把论文图谱、跨论文概念和多个评审代理结合起来，围绕给定核心论文生成问题、方法和实验设计。",
+      "problem": "单篇论文附近的检索容易形成局部改写，缺少跨领域概念迁移和人类偏好对齐的修订信号。",
+      "mechanism": "系统从核心论文扩展相关文献与共享概念知识，再让生成代理与依据人类判断配置的评审代理多轮修订方案。",
+      "mechanism_steps": [
+        "沿论文图谱和概念库扩展证据",
+        "生成问题、方法与实验设计",
+        "多评审代理反馈后迭代修订"
+      ],
+      "evidence": [
+        "正式论文报告跨学科实验，并以人类和模型评价支持清晰度、有效性和新颖性提升。"
+      ],
+      "limitations": [
+        "评审代理仍由同类大模型驱动，可能共享偏差。",
+        "没有执行全部候选实验，证据停留在方案质量。"
+      ],
+      "implications": [
+        "构想系统的关键不只是模型规模，而是证据邻域和反馈结构。",
+        "需要用独立人类或真实实验打破同模型闭环。"
+      ],
+      "paper_url": "https://aclanthology.org/2025.naacl-long.342/",
+      "source_note": "核验 NAACL 2025 正式全文的系统流程、人工与模型评价、消融和局限。",
+      "evidence_locations": [
+        "NAACL 2025 正式 PDF：第 4.3 节与论文页 6714–6715，人工及模型评价设计",
+        "图 2–3 与第 5 节，论文页 6715；表 1–3，论文页 6715–6717",
+        "Limitations，论文页 6718–6719；附录 A.1 与图 7，论文页 6722"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "doi": "10.18653/v1/2025.naacl-long.342",
+      "authors": [
+        "Jinheon Baek",
+        "Sujay Kumar Jauhar",
+        "Silviu Cucerzan",
+        "Sung Ju Hwang"
+      ],
+      "tags": [
+        "论文图谱",
+        "多智能体评审",
+        "研究方案"
+      ]
+    },
+    {
+      "id": "diversity-collapse",
+      "title": "Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation",
+      "title_local": "多智能体大模型系统中的多样性崩塌",
+      "short_title": "多样性崩塌",
+      "year": 2026,
+      "venue": "Findings of ACL 2026",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "knowledge-ideation",
+      "routes": [
+        "knowledge-ideation",
+        "evaluation-governance"
+      ],
+      "level": 0,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "证明多智能体并不天然带来更多科学想法：权威结构、密集通信和强耦合会让群体过早收敛。",
+      "problem": "很多研究代理以角色数量或对话轮次代表多样性，却不测最终想法是否真正分散。",
+      "mechanism": "研究系统改变模型、代理认知和通信拓扑，测量开放式构想的语义多样性及群体收敛动力学。",
+      "mechanism_steps": [
+        "构造不同规模、权威关系与通信密度的代理群体",
+        "生成开放式想法并测量多样性",
+        "定位模型、代理与系统动力学的贡献"
+      ],
+      "evidence": [
+        "在所测开放式科研方案生成设置中，权威加权结构降低语义多样性，群体规模产生递减收益，保留独立生成和隔离子群的通信结构可缓解收敛。"
+      ],
+      "limitations": [
+        "开放式构想指标不能直接代表科学价值。",
+        "结论依赖所测模型和群体结构，不能外推所有协作设置。"
+      ],
+      "implications": [
+        "科研代理应保留独立分支、异议和延迟汇合。",
+        "多智能体评价必须报告多样性与独立性，而不只报告平均分。"
+      ],
+      "paper_url": "https://aclanthology.org/2026.findings-acl.13/",
+      "source_note": "核验 Findings of ACL 2026 正式全文的 1,000 次方案生成、人工多样性核验、拓扑与规模消融。",
+      "evidence_locations": [
+        "Findings of ACL 2026 正式 PDF：第 2.2–2.3 节与表 1，论文页 252–253",
+        "第 3–5 节、图 2–10，论文页 254–257",
+        "Limitations，论文页 260；persona、拓扑与跨模型稳健性见附录 I–M"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "doi": "10.18653/v1/2026.findings-acl.13",
+      "tags": [
+        "多智能体",
+        "群体收敛",
+        "结构耦合"
+      ]
+    },
+    {
+      "id": "autoresearch-ai-survey",
+      "title": "AutoResearch AI: Towards AI-Powered Research Automation for Scientific Discovery",
+      "title_local": "AutoResearch AI：面向科学发现的人工智能科研自动化",
+      "short_title": "AutoResearch AI 综述",
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "preprint",
+      "source_type": "survey",
+      "primary_route": "paradigm-orchestration",
+      "routes": [
+        "paradigm-orchestration",
+        "evaluation-governance"
+      ],
+      "level": 0,
+      "tier": "background",
+      "evidence_level": "C",
+      "elevator": "把 Auto-Research 定义为从单点辅助到工作流自动化的谱系，并按文献、计划、执行、验证和传播五个条件梳理系统。",
+      "problem": "Auto-Research 一词同时指领域、工作流和多个同名项目，缺少共同的操作边界。",
+      "mechanism": "综述以研究闭环条件和自治谱系整理现有系统，并讨论不同学科的可执行性、反馈速度和责任边界。",
+      "mechanism_steps": [
+        "定义工作流条件与自治谱系",
+        "按研究阶段归纳代表系统",
+        "比较可审计数字环境与高风险实体场景"
+      ],
+      "evidence": [
+        "论文明确指出，当前集成管线仍普遍需要人工验证；自治程度依赖领域反馈和风险。"
+      ],
+      "limitations": [
+        "这是作者提出的综述框架，不是系统能力的独立实验。",
+        "2026 年新预印本，分类仍可能随领域演化。"
+      ],
+      "implications": [
+        "适合作为术语入口，不应作为“通用自主科研已经实现”的证据。",
+        "地图需要把具体同名项目与领域总称分开。"
+      ],
+      "paper_url": "https://arxiv.org/abs/2605.23204",
+      "source_note": "核验 arXiv 摘要、范围定义与工作流条件；作为背景而非能力证据。",
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D1",
+        "P": "P1",
+        "Q": "Q2"
+      },
+      "tags": [
+        "综述",
+        "术语",
+        "工作流谱系"
+      ]
+    },
+    {
+      "id": "data-to-paper",
+      "title": "Autonomous LLM-Driven Research — from Data to Human-Verifiable Research Papers",
+      "title_local": "大模型驱动的自主研究：从数据到可供人类核验的论文",
+      "short_title": "从数据到论文",
+      "year": 2025,
+      "venue": "NEJM AI",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "paradigm-orchestration",
+      "routes": [
+        "paradigm-orchestration",
+        "domain-discovery"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "从带注释数据出发，自动提出假设、编写与执行分析代码、解释结果并写成带程序化溯源的论文。",
+      "problem": "研究报告生成常把数据、代码和陈述割裂，导致人类难以核验每个结论的来源。",
+      "mechanism": "系统提供自动和人机协同两种模式，使论文中的结果能回溯到分析代码和输入数据。",
+      "mechanism_steps": [
+        "从数据提出可分析假设和计划",
+        "生成、调试并执行分析代码",
+        "解释结果、撰写论文并保留溯源链"
+      ],
+      "evidence": [
+        "正式摘要报告，在作者定义的简单生物医学案例中，自动模式约 80%–90% 可无重大错误地复现原结论。",
+        "系统输出代码、分析轨迹与论文，便于人类逐项核验。"
+      ],
+      "limitations": [
+        "研究新颖性有限，主要是回顾性复现带注释数据。",
+        "论文明确指出，任务复杂时人类协同对准确性与质量至关重要。"
+      ],
+      "implications": [
+        "可追溯数据—代码—陈述链比流畅写作更重要。",
+        "端到端报告能力不能替代问题选择和外部验证。"
+      ],
+      "paper_url": "https://doi.org/10.1056/AIoa2400555",
+      "source_note": "工作版本族核验：NEJM AI 正式 DOI 页确认摘要、正式状态与核心数字；V3 正文位置来自作者 arXiv:2404.17605v1，正式版 PDF 本轮未直接打开。",
+      "evidence_locations": [
+        "NEJM AI 正式 DOI 页：Abstract、Results 与出版史",
+        "作者全文 arXiv:2404.17605v1：工作流与信息控制 pp. 3–4；开放目标结果 pp. 5–6；固定目标可靠性 pp. 6–7",
+        "作者全文 pp. 8–9：information tracing 与 Discussion；图 1、图 4 分别为 PDF pp. 23、27"
+      ],
+      "source_tier": "T1",
+  "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "doi": "10.1056/AIoa2400555",
+      "authors": [
+        "Tal Ifargan",
+        "Lukas Hafner",
+        "Maor Kern",
+        "Ori Alcalay",
+        "Roy Kishony"
+      ],
+      "work_family_id": "data-to-paper",
+      "version_note": "正式卷期采用 NEJM AI 2025；全文机制核验来自同一工作族的 arXiv v1，正式 DOI 页用于交叉确认状态和核心结果。",
+      "preprint_url": "https://arxiv.org/abs/2404.17605",
+      "tags": [
+        "数据分析",
+        "论文生成",
+        "溯源"
+      ]
+    },
+    {
+      "id": "agent-laboratory",
+      "title": "Agent Laboratory: Using LLM Agents as Research Assistants",
+      "title_local": "Agent Laboratory：用大模型智能体辅助研究",
+      "short_title": "Agent Laboratory",
+      "year": 2025,
+      "venue": "Findings of EMNLP 2025",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "paradigm-orchestration",
+      "routes": [
+        "paradigm-orchestration",
+        "ml-research-loop"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "以人类给定的研究想法为起点，串联文献综述、机器学习实验和报告写作，并允许在每阶段插入反馈。",
+      "problem": "端到端系统若同时承担构想和评价，容易失去人类对研究目标与关键错误的控制。",
+      "mechanism": "多个角色代理围绕用户想法分阶段工作，输出代码仓库和研究报告；人类可选择不同反馈频率。",
+      "mechanism_steps": [
+        "围绕人类想法完成文献综述与实验计划",
+        "生成并运行机器学习代码",
+        "解释结果、写报告并接受阶段性反馈"
+      ],
+      "evidence": [
+        "在 8 人共驾样本中，外部评审相对自主稿的质量、可靠性与总体平均分分别提高 0.75、0.48 和 0.58；论文未报告统计显著性。",
+        "作者按完整流程平均 2.33 美元对比先前系统约 15 美元，估算成本低约 84%；这不是同任务、同预算、同质量的随机对照。"
+      ],
+      "limitations": [
+        "评价样本和任务以机器学习为主，成本估算依赖作者设置。",
+        "人类提供研究想法，系统不是独立问题发现者。"
+      ],
+      "implications": [
+        "人机控制点应显式设计，而不是在失败后临时介入。",
+        "适合把自动化视为扩大研究吞吐的助手。"
+      ],
+      "paper_url": "https://aclanthology.org/2025.findings-emnlp.320/",
+      "source_note": "核验 EMNLP 2025 Findings 正式全文的自主评价、共驾反馈、成本估算和局限；以正式版本合并早期 arXiv 记录。",
+      "evidence_locations": [
+        "Findings of EMNLP 2025 正式 PDF：图 1，论文页 5978；第 3 节与图 2，论文页 5979–5980",
+        "第 4.1 节与图 3–4，论文页 5980–5982；第 4.2 节与图 5，论文页 5982–5984",
+        "第 6 节，论文页 5985–5986；附录 A 与图 6，论文页 5992–5993；参与者说明，论文页 6014"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "authors": [
+        "Samuel Schmidgall",
+        "Yusheng Su",
+        "Ze Wang",
+        "Ximeng Sun",
+        "Emad Barsoum"
+      ],
+      "code_url": "https://github.com/SamuelSchmidgall/AgentLaboratory",
+      "tags": [
+        "端到端",
+        "人机协作",
+        "机器学习研究"
+      ]
+    },
+    {
+      "id": "ai-scientist-nature",
+      "title": "Towards end-to-end automation of AI research",
+      "title_local": "迈向人工智能研究的端到端自动化",
+      "short_title": "The AI Scientist",
+      "year": 2026,
+      "venue": "Nature",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "paradigm-orchestration",
+      "routes": [
+        "paradigm-orchestration",
+        "ml-research-loop",
+        "evaluation-governance"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "将想法生成、代码实验、结果分析、论文写作和自动评审接成数字闭环，是端到端人工智能研究最完整的公开版本族。",
+      "problem": "过去系统通常只自动化科研单环节，无法在统一轨迹中从想法推进到可审查论文。",
+      "mechanism": "系统检索并去重新想法，用模板或树搜索执行实验，分析日志、生成论文，再由多个评审模型和元评审汇总评价。",
+      "mechanism_steps": [
+        "提出想法并检索新颖性",
+        "执行与选择代码实验",
+        "分析结果并撰写带引用论文",
+        "自动多评审与元评审"
+      ],
+      "evidence": [
+        "Nature 正式论文记录三篇投稿均按预注册方案在正式决定前撤回；其中一篇获得 6、7、6 分，组织者判断若不撤回很可能被接收，但没有实际接收结果。",
+        "论文报告自动评审器在训练截止后材料上的平衡准确率由 69% 降至 66%。"
+      ],
+      "limitations": [
+        "该工作坊通常接收阈值和接受率都不能替代正式决定；三篇投稿均在决定前撤回，也不能外推为 ICLR 主会质量。",
+        "作者人工筛选投稿；系统存在朴素想法、实现错误、论证薄弱和虚构引用。"
+      ],
+      "implications": [
+        "端到端流程可运行不代表端到端质量可靠。",
+        "需要独立评审、留出任务和对失败轨迹的公开审计。"
+      ],
+      "paper_url": "https://www.nature.com/articles/s41586-026-10265-5",
+      "source_note": "核验 Nature 651, 914–919 正式全文、投稿评审事件序列与 DOI；合并 The AI Scientist v1/v2 版本族。",
+      "evidence_locations": [
+        "Nature 正式 PDF：Abstract，p. 914；表 1 与 Automated Reviewer 正文，p. 916",
+        "Human evaluation results，pp. 916–917；图 2 与局限/风险讨论，p. 917",
+        "Methods—Ethics approval，PDF p. 9：三篇人工智能稿无论评审结果均在正式决定前撤回"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "doi": "10.1038/s41586-026-10265-5",
+      "authors": [
+        "Chris Lu",
+        "Cong Lu",
+        "Robert Tjarko Lange",
+        "Yutaro Yamada",
+        "Shengran Hu",
+        "Jakob Foerster",
+        "David Ha",
+        "Jeff Clune"
+      ],
+      "related_ids": [
+        "paperbench",
+        "autoexperiment"
+      ],
+      "tags": [
+        "端到端",
+        "自动评审",
+        "代码实验"
+      ]
+    },
+    {
+      "id": "mlagentbench",
+      "title": "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation",
+      "title_local": "MLAgentBench：评测机器学习实验智能体",
+      "short_title": "MLAgentBench",
+      "year": 2024,
+      "venue": "ICML 2024",
+      "status": "peer-reviewed",
+      "source_type": "benchmark",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "ml-research-loop"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "首批把文件读写、代码执行、结果检查和迭代改进放进可自动评分机器学习研究环境的代表基准。",
+      "problem": "通用编码基准不能测量代理是否会分析实验结果并规划下一轮研究。",
+      "mechanism": "基准提供 13 个机器学习任务与隐藏评价器，代理反复编辑代码、执行实验并提交最终模型。",
+      "mechanism_steps": [
+        "读取任务文件和基线",
+        "规划、编辑并执行实验",
+        "检查输出后继续迭代",
+        "隐藏评价器计算是否显著改进"
+      ],
+      "evidence": [
+        "正式论文报告，最强 Claude 3 Opus 代理平均成功率 37.5%。",
+        "任务成功率从旧数据集的 100% 到训练截止后新挑战的 0%，暴露污染和泛化差异。"
+      ],
+      "limitations": [
+        "只有 13 项任务，早期代理架构和模型已过时。",
+        "成功常指相对基线提高 10%，不等同于原创研究。"
+      ],
+      "implications": [
+        "可执行反馈是 Auto-Research 与文本代理的关键分界。",
+        "必须使用时间留出任务与隐藏测试减少记忆污染。"
+      ],
+      "paper_url": "https://proceedings.mlr.press/v235/huang24y.html",
+      "source_note": "核验 ICML 2024 正式记录与作者全文的执行循环、成功阈值、13 项任务和逐任务结果。",
+      "evidence_locations": [
+        "PMLR 正式页 Abstract：13 项任务、Claude 3 Opus 平均 37.5%、旧任务 100% 与新任务 0%",
+        "作者全文第 2.3 节：成功定义为相对 starter-code baseline 改善 10%",
+        "作者全文表 2–3：任务清单、每任务 8 次运行与 37.5% 平均成功率；第 4 节：动作和时间预算"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "authors": [
+        "Qian Huang",
+        "Jian Vora",
+        "Percy Liang",
+        "Jure Leskovec"
+      ],
+      "code_url": "https://github.com/snap-stanford/MLAgentBench",
+      "tags": [
+        "机器学习实验",
+        "可执行基准",
+        "时间污染"
+      ]
+    },
+    {
+      "id": "aide-code-search",
+      "title": "AIDE: AI-Driven Exploration in the Space of Code",
+      "title_local": "AIDE：在代码空间中的人工智能驱动探索",
+      "short_title": "AIDE",
+      "year": 2025,
+      "venue": "arXiv",
+      "status": "preprint",
+      "source_type": "paper",
+      "primary_route": "ml-research-loop",
+      "routes": [
+        "ml-research-loop"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "C",
+      "elevator": "把机器学习研发建模为代码树搜索，复用和改写有希望的分支，让计算预算转化为更高性能。",
+      "problem": "线性试错容易遗忘有效分支，也难以在失败后回到较好的程序状态。",
+      "mechanism": "代理提出代码修改、执行并评价结果，将成功和失败组织为搜索树，再选择分支继续改进。",
+      "mechanism_steps": [
+        "生成候选代码修改",
+        "运行并读取验证指标",
+        "把结果加入解树并选择后续分支"
+      ],
+      "evidence": [
+        "作者报告在自建 Kaggle 评价、MLE-Bench 和 RE-Bench 上达到当时强结果。"
+      ],
+      "limitations": [
+        "预印本，主要比较依赖作者实现。",
+        "优化可量化得分，不保证发现可解释或可迁移的方法。"
+      ],
+      "implications": [
+        "代码树和显式回退是数字研究闭环的可复用组件。",
+        "验证集选择偏差仍需独立留出测试控制。"
+      ],
+      "paper_url": "https://arxiv.org/abs/2502.13138",
+      "source_note": "核验 arXiv 正文的无状态标量目标、算法 1、Weco-Kaggle 结果与污染边界，以及官方代码入口；结论保持为作者报告。",
+      "evidence_locations": [
+        "arXiv 正文第 2 节与式 1：无状态标量目标 h(s)；第 3.1 节与算法 1：代码树生成、评价与选点",
+        "第 4.1 节与表 1：Weco-Kaggle 63 项、Lite 16 项及人类分位结果",
+        "第 4.1 节 Potential Limitations：本地测试切分、私有榜单差异与污染；第 4.2 节表 3 的 MLE-Bench 数字来自 Chan 等"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P1",
+        "Q": "Q2"
+      },
+      "authors": [
+        "Zhengyao Jiang",
+        "Dominik Schmidt",
+        "Dhruv Srikanth",
+        "Dixing Xu",
+        "Ian Kaplan",
+        "Deniss Jacenko",
+        "Yuxiang Wu"
+      ],
+      "code_url": "https://github.com/WecoAI/aideml",
+      "tags": [
+        "树搜索",
+        "代码优化",
+        "机器学习工程"
+      ]
+    },
+    {
+      "id": "alphaevolve",
+      "title": "AlphaEvolve: A coding agent for scientific and algorithmic discovery",
+      "title_local": "AlphaEvolve：用于科学与算法发现的编码智能体",
+      "short_title": "AlphaEvolve",
+      "year": 2025,
+      "venue": "arXiv technical report",
+      "status": "preprint",
+      "source_type": "paper",
+      "primary_route": "ml-research-loop",
+      "routes": [
+        "ml-research-loop",
+        "domain-discovery"
+      ],
+      "level": 2,
+      "tier": "bridge",
+      "evidence_level": "B",
+      "elevator": "结合大模型代码生成、自动评价器和进化选择，在可验证的算法与数学问题上持续改进程序。",
+      "problem": "开放式代码搜索空间巨大，单次生成很难稳定超过现有算法。",
+      "mechanism": "多个生成模型产生程序变体，评价器执行并打分，进化数据库保留有价值且多样的程序用于后续变异。",
+      "mechanism_steps": [
+        "生成或改写候选算法代码",
+        "运行一个或多个可验证评价器",
+        "按质量与多样性更新种群并继续演化"
+      ],
+      "evidence": [
+        "官方白皮书报告在计算基础设施、矩阵乘法和五十余个数学问题上发现改进，其中部分结果可形式化核验。"
+      ],
+      "limitations": [
+        "白皮书不是同行评议的系统论文，完整系统与全部实验未公开。",
+        "依赖快速、正确的自动评价器，难以直接迁移到开放科学判断。"
+      ],
+      "implications": [
+        "可验证领域是自动发现最成熟的落点。",
+        "应把系统发现与独立数学证明或外部实现复核分开报告。"
+      ],
+    "paper_url": "https://arxiv.org/abs/2506.13131",
+    "project_url": "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/",
+    "source_note": "核验 arXiv 技术报告与 Google DeepMind 官方项目说明；未经过同行评议。",
+    "evidence_locations": [
+      "arXiv:2506.13131 官方摘要：编码模型、自动评价器和进化框架，以及矩阵乘法和 50 余个数学问题的报告结果",
+      "Google DeepMind 官方项目页‘How AlphaEvolve works’与‘Accelerating data centre efficiency’：生成—执行评价—进化选择机制及工程应用边界"
+    ],
+      "source_tier": "T1",
+      "verification_state": "abstract-checked",
+      "evidence_vector": {
+        "V": "V2",
+        "D": "D1",
+        "P": "P1",
+        "Q": "Q2"
+      },
+      "authors": [
+        "Alexander Novikov",
+        "Ngan Vu",
+        "Marvin Eisenberger",
+        "Matej Balog"
+      ],
+      "authors_truncated": true,
+      "author_count": 18,
+      "tags": [
+        "进化搜索",
+        "算法发现",
+        "可验证奖励"
+      ]
+    },
+    {
+      "id": "karpathy-autoresearch",
+      "title": "karpathy/autoresearch",
+      "title_local": "Karpathy 的 autoresearch 开源项目",
+      "short_title": "autoresearch",
+      "year": 2026,
+      "venue": "Official GitHub repository",
+      "status": "official-report",
+      "source_type": "code",
+      "artifact_type": "code-repository",
+      "publication_status_note": "官方代码仓库，不是论文或同行评议报告；status 仅用于满足地图三值枚举。",
+      "primary_route": "ml-research-loop",
+      "routes": [
+        "ml-research-loop"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "B",
+      "elevator": "让编码代理在单 GPU、单文件、固定五分钟训练和单一验证指标下持续提出、执行并保留实验。",
+      "problem": "机器学习研究代理常因环境庞杂、反馈慢和指标不可比较而无法形成稳定长程循环。",
+      "mechanism": "代理只修改 train.py，运行固定时长训练，读取 val_bpb；改善则保留修改，否则回退，并把研究指令写在 program.md。",
+      "mechanism_steps": [
+        "读取当前训练代码和研究指令",
+        "提出并实施单文件修改",
+        "固定五分钟训练并读取验证 bpb",
+        "按改善保留或回退并继续"
+      ],
+      "evidence": [
+        "官方 README 预计单 GPU 每小时约 12 次实验，并公开完整代码、日志约定和硬件限制。"
+      ],
+      "limitations": [
+        "没有同行评议、独立对照或新科学命题评价。",
+        "不同硬件结果不可比，单指标循环容易过拟合验证集。"
+      ],
+      "implications": [
+        "强约束环境使闭环真正可运行，是同名 AutoResearch 项目的代表。",
+        "它是机器学习配方搜索，不代表全部自动科研。"
+      ],
+      "paper_url": "https://github.com/karpathy/autoresearch",
+      "source_note": "核验官方仓库 README 的 The idea、How it works、Requirements、Design choices，以及 program.md 和许可证。",
+      "evidence_locations": [
+        "官方 README—The idea 与 How it works：只修改 train.py、固定 prepare.py、按 val_bpb 保留或回退",
+        "官方 README—Quick start / Requirements：单张 NVIDIA GPU 与 H100 测试环境",
+        "官方 README—Design choices：固定五分钟、约 12 次/小时、约 100 次/夜及跨硬件不可比"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P1",
+        "Q": "Q1"
+      },
+      "authors": [
+        "Andrej Karpathy"
+      ],
+      "code_url": "https://github.com/karpathy/autoresearch",
+      "related_ids": [
+        "bilevel-autoresearch",
+        "specialist-autoresearch"
+      ],
+      "tags": [
+        "同名项目",
+        "单文件",
+        "固定预算"
+      ]
+    },
+    {
+      "id": "era-nature",
+      "title": "An AI system to help scientists write expert-level empirical software",
+      "title_local": "帮助科学家编写专家级实证软件的人工智能系统",
+      "short_title": "ERA",
+      "year": 2026,
+      "venue": "Nature",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "ml-research-loop",
+      "routes": [
+        "ml-research-loop",
+        "domain-discovery",
+        "evaluation-governance"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "用大模型生成代码并以树搜索反复执行、评分和组合实现，把可打分科学任务转化为经验软件研发闭环。",
+      "problem": "专家级科学软件需要多轮试错，单次代码生成很难同时满足正确性、性能和领域约束。",
+      "mechanism": "系统围绕研究想法产生程序变体，在沙箱中执行并由外部指标评分，以 PUCT 风格搜索平衡探索与利用。",
+      "mechanism_steps": [
+        "把研究想法转成可执行候选程序",
+        "沙箱运行并用任务指标评分",
+        "树搜索选择、回溯和组合高分实现"
+      ],
+      "evidence": [
+        "Nature 正式论文报告单细胞分析 40 个新方法、疫情预测 14 个模型及其他科学任务。",
+        "单细胞案例使用独立优化集，并在 1,747,937 个留出细胞上评价。"
+      ],
+      "limitations": [
+        "论文明确指出，高分复杂代码不必然解决复杂科学问题。",
+        "疫情回溯案例后来受到数据修订泄漏的独立质疑。"
+      ],
+      "implications": [
+        "可量化评价器能显著扩大经验软件探索。",
+        "所有高分主张都应经过时间正确的留出数据和外部审计。"
+      ],
+      "paper_url": "https://www.nature.com/articles/s41586-026-10658-6",
+      "source_note": "核验 Nature 654, 909–916 正式全文的树搜索、单细胞留出评价与科学发现边界；与独立泄漏复核交叉阅读。",
+      "evidence_locations": [
+        "Nature 正文 Main 首段与图 1：可打分任务、代码变异、沙箱执行与树搜索",
+        "Genomics: batch integration of scRNA-seq data 与图 2b–d：独立优化集、六个留出数据集及总计 1,747,937 个细胞",
+        "Methods—Code mutation system 与算法 1：PUCT 风格选点和回传；正文 critical distinction 段：经验软件优化不等于一般科学发现"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "doi": "10.1038/s41586-026-10658-6",
+      "authors": [
+        "Eser Aygün",
+        "Anastasiya Belyaeva",
+        "Gheorghe Comanici",
+        "Marc Coram",
+        "Hao Cui"
+      ],
+      "authors_truncated": true,
+      "author_count": 42,
+      "code_url": "https://github.com/google-research/era",
+      "related_ids": [
+        "era-data-leakage"
+      ],
+      "tags": [
+        "树搜索",
+        "科学软件",
+        "留出测试"
+      ]
+    },
+    {
+      "id": "specialist-autoresearch",
+      "title": "Auto Research with Specialist Agents Develops Effective and Non-Trivial Training Recipes",
+      "title_local": "专长智能体自动研究有效且非平凡的训练配方",
+      "short_title": "专长代理 Auto Research",
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "preprint",
+      "source_type": "paper",
+      "primary_route": "ml-research-loop",
+      "routes": [
+        "ml-research-loop"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "C",
+      "elevator": "让不同专长代理探索训练配方的不同部分，并用共享实验谱系与外部评价器组合程序级修改。",
+      "problem": "单一代理在长程代码搜索中容易重复失败，也难以保留不同技术方向的有效知识。",
+      "mechanism": "专长代理提交假设、代码差异、得分和失败标签；系统共享谱系，再选择、组合或分叉后续实验。",
+      "mechanism_steps": [
+        "按专长划分配方搜索面",
+        "执行代码差异并由外部指标评价",
+        "记录失败、合法性和谱系",
+        "组合有效修改继续搜索"
+      ],
+      "evidence": [
+        "预印本摘要报告 1,197 次主实验和 600 次控制实验，覆盖三个可快速打分任务。"
+      ],
+      "limitations": [
+        "三个任务均为机器学习小环境，改进多是已有技术组合。",
+        "尚无独立团队复现，不能外推开放式科学创新。"
+      ],
+      "implications": [
+        "专长分工只有在共享失败记录和外部评价时才有意义。",
+        "实验量应与留出泛化和独立基线同时报告。"
+      ],
+      "paper_url": "https://arxiv.org/abs/2605.05724",
+      "source_note": "核验 arXiv 全文的三任务环境、提交循环、专长谱系、表 1 对照与范围限制；保持预印本置信度。",
+      "evidence_locations": [
+        "arXiv 正文第 3.1–3.3 节：三类任务、外部评价器、submitted-trial loop 与共享谱系",
+        "第 4 节首段与表 1：1,197 次主实验、600 次控制及三项改善",
+        "第 4.3 节、图 3 与表 3：200-trial 对照；第 5 节 Scope and limits：只适用于可自动核验问题"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P1",
+        "Q": "Q2"
+      },
+      "authors": [
+        "Jingjie Ning",
+        "Xiaochuan Li",
+        "Ji Zeng",
+        "Hao Kang",
+        "Chenyan Xiong"
+      ],
+      "code_url": "https://github.com/cxcscmu/Auto-Research-Recipes",
+      "related_ids": [
+        "karpathy-autoresearch"
+      ],
+      "tags": [
+        "专长代理",
+        "实验谱系",
+        "训练配方"
+      ]
+    },
+    {
+      "id": "bilevel-autoresearch",
+      "title": "Bilevel Autoresearch: Meta-Autoresearching Itself",
+      "title_local": "双层 AutoResearch：对搜索机制本身进行元研究",
+      "short_title": "双层 AutoResearch",
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "preprint",
+      "source_type": "paper",
+      "primary_route": "ml-research-loop",
+      "routes": [
+        "ml-research-loop"
+      ],
+      "level": 2,
+      "tier": "bridge",
+      "evidence_level": "C",
+      "elevator": "在优化训练任务的内环之外增加外环，让同一模型生成并注入新的搜索机制代码。",
+      "problem": "固定的保留或回退策略可能限制智能体发现更有效的试验设计方式。",
+      "mechanism": "内环修改训练代码，外环观察轨迹后产生组合优化、多臂老虎机或试验设计机制，并把机制注入下一轮。",
+      "mechanism_steps": [
+        "运行基础内环并记录实验轨迹",
+        "外环生成新的搜索机制代码",
+        "把机制注入内环并比较改进"
+      ],
+      "evidence": [
+        "摘要报告在一个 Karpathy GPT 预训练基准上，外环指标改善约为标准内环的五倍。"
+      ],
+      "limitations": [
+        "单一小型基准、预印本且无外部复现。",
+        "同一模型既设计搜索又评价轨迹，存在共偏差。"
+      ],
+      "implications": [
+        "元优化可把 Auto-Research 从“搜索答案”推进到“搜索如何搜索”。",
+        "需要跨任务测试才能证明搜索机制可迁移。"
+      ],
+    "paper_url": "https://arxiv.org/abs/2603.23420",
+    "source_note": "核验 arXiv 全文的双层机制与单基准限制。",
+    "evidence_locations": [
+      "arXiv:2603.23420 Abstract 与 §2–§3：内环训练实验、外环搜索机制生成和注入流程",
+      "arXiv:2603.23420 §4 与结果表：单一 Karpathy GPT 预训练基准上 -0.045 对 -0.009 val_bpb 的报告改善",
+      "arXiv:2603.23420 Limitations：单基准、同模型共偏差与外部复现缺口"
+    ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P1",
+        "Q": "Q1"
+      },
+      "related_ids": [
+        "karpathy-autoresearch"
+      ],
+      "tags": [
+        "元搜索",
+        "双层优化",
+        "搜索机制"
+      ]
+    },
+    {
+      "id": "popper",
+      "title": "Automated Hypothesis Validation with Agentic Sequential Falsifications",
+      "title_local": "通过智能体序贯证伪自动验证假设",
+      "short_title": "POPPER",
+      "year": 2025,
+      "venue": "ICML 2025",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "domain-discovery",
+      "routes": [
+        "domain-discovery",
+        "knowledge-ideation"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "把自由文本假设拆成可测含义，自动设计并执行多次证伪，同时用序贯检验严格控制一类错误。",
+      "problem": "大模型能快速生成大量抽象假设，但手工验证昂贵，普通代理也缺少统计错误控制。",
+      "mechanism": "POPPER 让代理设计针对可测含义的证伪实验，从既有数据或新执行的可程序化过程中取证，并用序贯统计框架更新判断。",
+      "mechanism_steps": [
+        "把高层假设转成可测含义",
+        "设计并执行多来源证伪",
+        "序贯更新证据并控制一类错误"
+      ],
+      "evidence": [
+        "ICML 正式论文覆盖生物、经济与社会学等六个领域。",
+        "作者报告复杂生物假设验证接近人类科学家，耗时降低约十倍。"
+      ],
+  "limitations": [
+    "主要在可程序化数据环境中测试，真实新实验范围有限。",
+    "复杂假设的拆解仍依赖模型与可用数据；逐项一类错误控制也不等同于多假设场景中的低错误发现率。"
+      ],
+      "implications": [
+        "自动科研应优先自动化反证，而不只自动化假设生成。",
+        "统计错误控制为代理循环提供可审计停止规则。"
+      ],
+  "paper_url": "https://proceedings.mlr.press/v267/huang25n.html",
+  "source_note": "核验 ICML 2025 正文的序贯证伪算法、六领域实验与时间比较。",
+  "evidence_locations": [
+    "PMLR 正式页 Abstract 与作者全文 §2.2–§2.4、Figure 1，pp.2–4：两代理证伪循环、e 值累积和任意时停止的一类错误控制",
+    "作者全文 §4、Table 3–4，pp.6–8：六领域设置、一类错误与统计功效比较",
+    "作者全文专家研究与 Appendix C/F，pp.8、15–17；Appendix C Limitations p.15：9 位参与者、时间比较及一类错误不保证低错误发现率"
+  ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+  "authors": [
+    "Kexin Huang",
+    "Ying Jin",
+    "Ryan Li",
+    "Michael Y. Li",
+    "Emmanuel Candes",
+    "Jure Leskovec"
+  ],
+      "code_url": "https://github.com/snap-stanford/POPPER",
+      "tags": [
+        "假设验证",
+        "证伪",
+        "序贯检验"
+      ]
+    },
+    {
+      "id": "moose-chem",
+      "title": "MOOSE-Chem: Large Language Models for Rediscovering Unseen Chemistry Scientific Hypotheses",
+      "title_local": "MOOSE-Chem：用大模型重新发现未见化学假设",
+      "short_title": "MOOSE-Chem",
+      "year": 2025,
+      "venue": "ICLR 2025",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "domain-discovery",
+      "routes": [
+        "domain-discovery",
+        "knowledge-ideation"
+      ],
+      "level": 1,
+      "tier": "bridge",
+      "evidence_level": "B",
+      "elevator": "用训练截止后的化学论文检验大模型能否从背景与灵感文献重新构造未知假设，降低直接记忆污染。",
+      "problem": "开放式科学假设难有唯一答案，也容易因训练数据记忆而高估发现能力。",
+      "mechanism": "基准选取训练截止后高水平化学论文，提供背景和文献语料，让多阶段代理恢复问题、灵感与假设。",
+      "mechanism_steps": [
+        "构造截止后化学论文测试集",
+        "检索并组合潜在灵感",
+        "生成假设并与真实论文比较"
+      ],
+      "evidence": [
+        "官方论文记录以 2024 年新化学论文为目标，并公开代码和数据用于未见假设重发现。"
+      ],
+      "limitations": [
+        "重发现已知论文不是实时产生新知识。",
+        "匹配真实假设可能奖励相似表述而非独立科学价值。"
+      ],
+      "implications": [
+        "时间留出是评价研究构想污染风险的重要工具。",
+        "真正前瞻验证仍需独立实验。"
+      ],
+    "paper_url": "https://openreview.net/forum?id=X9OfMNNepI",
+    "source_note": "核验 ICLR 2025 主会正式记录与官方代码仓库；AI4X 2025 页面仅作为后续展示版本关联。",
+    "evidence_locations": [
+      "ICLR 2025 OpenReview 正式记录 Abstract：以训练截止后化学论文构造未见假设重发现任务",
+      "ICLR 2025 OpenReview 正式 PDF 的 Method 与 Experiments 部分：背景、灵感文献和假设的多阶段生成与比较",
+      "MOOSE-Chem 官方 GitHub README/Data：测试集、代码与时间留出协议"
+    ],
+      "source_tier": "T1",
+      "verification_state": "abstract-checked",
+      "evidence_vector": {
+        "V": "V2",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "code_url": "https://github.com/ZonglinY/MOOSE-Chem",
+      "work_family_id": "moose-chem",
+      "version_note": "规范版本为 ICLR 2025 主会论文；OpenReview IDDE01WDeN 是后续 AI4X 2025 展示版本。",
+      "related_version_url": "https://openreview.net/forum?id=IDDE01WDeN",
+      "tags": [
+        "化学",
+        "时间留出",
+        "假设重发现"
+      ]
+    },
+    {
+      "id": "virtual-lab",
+      "title": "The Virtual Lab of AI agents designs new SARS-CoV-2 nanobodies",
+      "title_local": "人工智能智能体虚拟实验室设计新型新冠病毒纳米抗体",
+      "short_title": "Virtual Lab",
+      "year": 2025,
+      "venue": "Nature",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "domain-discovery",
+      "routes": [
+        "domain-discovery",
+        "knowledge-ideation"
+      ],
+      "level": 1,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "让人工智能首席研究员组织专业智能体会议，在人类高层反馈下设计蛋白计算流程和候选纳米抗体，再做实体实验验证。",
+      "problem": "跨学科蛋白设计需要把病毒学、计算生物学和结构建模知识组合成可执行流程。",
+      "mechanism": "多角色代理通过系列研究会议设计 ESM、AlphaFold-Multimer 与 Rosetta 组合流程，人类审核方向并组织后续湿实验。",
+      "mechanism_steps": [
+        "组建虚拟跨学科研究团队",
+        "会议式提出并修订计算设计流程",
+        "生成 92 个候选并由人类团队实验验证"
+      ],
+      "evidence": [
+        "Nature 正式论文报告 92 个新设计，其中两种纳米抗体对 JN.1 或 KP.3 变体结合改善，同时保持祖代结合。"
+      ],
+      "limitations": [
+        "人类提供高层反馈并执行全部实体实验。",
+        "结果是候选结合表型，不是病毒中和、动物疗效或临床有效性；单一案例不能证明跨领域自主发现。"
+      ],
+      "implications": [
+        "多智能体最可信的模式仍是与专业人类和外部实验结合。",
+        "论文应把人工贡献写入闭环，而非隐藏在“自主”标签中。"
+      ],
+      "paper_url": "https://www.nature.com/articles/s41586-025-09442-9",
+      "source_note": "核验 Nature 646, 716–723 正文的虚拟会议流程、92 个设计与实体结合实验。",
+      "evidence_locations": [
+        "Nature Abstract 与 Figure 1，pp.716–717：92 个新设计及人类指定首席研究员、批评者和会议议程",
+        "Nature Figure 2–4，pp.718–720：计算筛选、96 个测试候选中 92 个为新设计，以及两次生物学重复的结合实验",
+        "Nature 主文 p.721、Methods 与 Author contributions：全部关键脚本和湿实验由人类编写、运行和验证"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "doi": "10.1038/s41586-025-09442-9",
+      "authors": [
+        "Kyle Swanson",
+        "Wesley Wu",
+        "Nash L. Bulaong",
+        "John E. Pak",
+        "James Zou"
+      ],
+      "authors_truncated": false,
+      "tags": [
+        "蛋白设计",
+        "多智能体",
+        "人机协作"
+      ]
+    },
+    {
+      "id": "google-co-scientist",
+      "title": "Accelerating scientific discovery with Co-Scientist",
+      "title_local": "用 Co-Scientist 加速科学发现",
+      "short_title": "Google Co-Scientist",
+      "year": 2026,
+      "venue": "Nature",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "domain-discovery",
+      "routes": [
+        "domain-discovery",
+        "knowledge-ideation"
+      ],
+      "level": 1,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "由监督器编排生成、反思、排序、演化和元评审代理，在专家选择后用现实生物实验检查候选假设。",
+      "problem": "单个模型难以同时保持构想广度、批判性和领域可行性。",
+      "mechanism": "系统用自博弈辩论和 Elo 排名筛选研究方案，再由领域专家选择候选并执行实验。",
+      "mechanism_steps": [
+        "多代理生成与反思候选",
+        "自博弈比较、排序与演化",
+        "专家选择后进行实体实验验证"
+      ],
+      "evidence": [
+        "Nature 正式论文的急性髓系白血病案例中，五个初筛药物有三个抑制细胞活力。",
+        "KIRA6 在 KG-1a 与非白血病对照间报告 18 倍 IC50 分离。"
+      ],
+      "limitations": [
+        "候选选择、方案落地和湿实验均有专家深度参与。",
+        "KIRA6 的 18 倍分离只适用于 KG-1a 对 TK6；其他急性髓系白血病细胞系反应差异很大，体外结果不替代临床前验证。"
+      ],
+      "implications": [
+        "多代理排名可以组织大规模构想，但需要外部生物实验证据。",
+        "不能把专家在环系统标成实体自主闭环。"
+      ],
+      "paper_url": "https://www.nature.com/articles/s41586-026-10644-y",
+      "source_note": "核验 Nature 655, 487–496 正式全文与 DOI；以正式版本合并早期预印本。",
+      "evidence_locations": [
+        "Nature Figure 1，pp.488–489：多智能体架构及科学家提供目标、复核和选择候选、专家执行体外实验的责任边界",
+        "Nature 主文 p.490：三类验证任务与系统消融；全部任务均有专家在环",
+        "Nature Wet-laboratory validation 与 Figure 3，pp.492–493：五个初筛药物中三项抑制细胞活力，以及 KIRA6 在 KG-1a 对 TK6 的约18倍 IC50 分离",
+        "Nature Discussion p.495：开放文献偏差、负结果缺失、付费文献与误差传播限制"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q3"
+      },
+      "doi": "10.1038/s41586-026-10644-y",
+      "work_family_id": "google-co-scientist",
+      "version_note": "以 2026 Nature 正式论文为规范版本，合并 2025 年早期预印本。",
+      "preprint_url": "https://arxiv.org/abs/2502.18864",
+      "authors": [
+        "Juraj Gottweis",
+        "Wei-Hung Weng",
+        "Alexander Daryin",
+        "Tao Tu",
+        "Petar Sirkovic"
+      ],
+      "authors_truncated": true,
+      "author_count": 51,
+      "tags": [
+        "生物医学",
+        "自博弈",
+        "专家在环"
+      ]
+    },
+    {
+      "id": "robin",
+      "title": "A multi-agent system for automating scientific discovery",
+      "title_local": "用于自动化科学发现的多智能体系统",
+      "short_title": "Robin",
+      "year": 2026,
+      "venue": "Nature",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "domain-discovery",
+      "routes": [
+        "domain-discovery",
+        "physical-lab"
+      ],
+      "level": 1,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "检索代理形成治疗假设，数据分析代理解释人类完成的实验，系统据此更新下一轮候选，构成半自主疾病发现工作流。",
+      "problem": "从文献候选到湿实验反馈的转化通常跨越多个团队和数据形态。",
+      "mechanism": "Crow/Falcon 完成文献与假设工作，Finch 多轨迹分析实验数据并形成共识，人类团队负责复核、协议和湿实验。",
+      "mechanism_steps": [
+        "检索证据并提出治疗候选",
+        "人类复核并执行湿实验",
+        "代理分析结果形成共识",
+        "系统据反馈更新候选"
+      ],
+      "evidence": [
+        "Nature 正式论文在干性年龄相关性黄斑变性案例中报告，ripasudil 使吞噬相对对照提高 1.89 倍；人类分析为 1.75 倍。"
+      ],
+      "limitations": [
+        "论文明确称系统为半自主；研究者因可得性替换实验材料和细胞模型，湿实验、协议与部分数据处理均由人完成。",
+        "初筛和后续实验样本量较小、没有体内验证；Robin 尚不能输出可直接执行的实验协议。"
+      ],
+      "implications": [
+        "真实实验反馈可以接入代理循环，但自动与人工贡献必须分账。",
+        "数据分析共识需要与人类分析和预注册指标比较。"
+      ],
+      "paper_url": "https://www.nature.com/articles/s41586-026-10652-y",
+      "source_note": "核验 Nature 655, 497–505 正式全文与 DOI。",
+      "evidence_locations": [
+        "Nature Abstract p.497 与 Figure 1 pp.498–499：系统被作者称为半自主，人类复核清单、提供实验方案并选择后续候选",
+        "Nature Figure 2 p.500：研究者替换实验材料与细胞模型，每条件 n=3 wells",
+        "Nature Figure 3 p.501 与 Figure 4 p.502：Finch 分析 1.89 倍、人类分析 1.75 倍，以及 ARPE-19 n=3、老年原代 RPE n=4 的同团队验证",
+        "Nature Discussion p.504：Finch 仍不能生成足够精确的可执行实验方案并依赖领域专家提示"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "authors": [
+        "Ali E. Ghareeb",
+        "Benjamin Chang",
+        "Ludovico Mitchener",
+        "Angela Yiu",
+        "Caralyn J. Szostkiewicz",
+        "Dmytro Shved",
+        "Gavin J. Gyimesi",
+        "Jon M. Laurent",
+        "Samantha M. Wright",
+        "Muhammed T. Razzak",
+        "Andrew D. White",
+        "Silvia C. Finnemann",
+        "Michaela M. Hinks",
+        "Samuel G. Rodriques"
+      ],
+      "authors_truncated": false,
+      "doi": "10.1038/s41586-026-10652-y",
+      "tags": [
+        "疾病发现",
+        "多智能体",
+        "半自主"
+      ]
+    },
+    {
+      "id": "molecular-auto-research",
+  "title": "Closed-loop Auto Research for Molecular Property Prediction: Discovering and Certifying Generalizable Improvements",
+      "title_local": "面向分子性质预测的闭环 Auto Research",
+      "short_title": "分子 Auto Research",
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "preprint",
+      "source_type": "paper",
+      "primary_route": "domain-discovery",
+      "routes": [
+        "domain-discovery",
+        "ml-research-loop",
+        "evaluation-governance"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "C",
+      "elevator": "在特征、模型和外部证据之间进行代码级搜索，并只在最后一次访问未见测试集，直接展示验证增益可能崩塌。",
+      "problem": "代理闭环容易反复利用验证集，表面改进未必能迁移到真正未见分子端点。",
+      "mechanism": "代理分别探索特征、模型和外部证据，文件级锁定归因，以验证信号选择方案，最后进行一次测试认证。",
+      "mechanism_steps": [
+        "并行搜索特征、模型和外部证据",
+        "用验证集选择并锁定代码",
+        "一次访问未见测试集认证迁移"
+      ],
+      "evidence": [
+        "预印本覆盖 36 个端点；某模型验证增益 0.041 在测试仅剩 0.003。",
+        "某外部数据从验证 +0.022 变为测试 -0.019，匹配试次 AutoML 未复现代码级干预。"
+      ],
+      "limitations": [
+        "只覆盖分子性质预测且尚未同行评议。",
+        "不同套件指标不能简单横向比较。"
+      ],
+      "implications": [
+        "这是闭环验证过拟合风险的直接负面证据。",
+        "代理研发必须冻结选择并保留真正未见测试。"
+      ],
+  "paper_url": "https://arxiv.org/abs/2606.22731",
+  "source_note": "核验 arXiv 全文中的端点数、验证—测试差距与 AutoML 对照。",
+  "evidence_locations": [
+    "arXiv:2606.22731v1 §3.1–§3.7：三类干预轴、36 个端点、文件级隔离、一次留出测试及泄漏过滤",
+    "arXiv:2606.22731v1 Figure 2、Table 1 与 §5.1：验证与测试的配对结果，以及 0.041→0.003 和 +0.022→-0.019 两种非迁移模式",
+    "arXiv:2606.22731v1 §6.1–§6.2、Table 2：匹配试次 FLAML 0.006 对代理 0.042，及与 84M 参数三维模型的非等预算比较"
+  ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+  "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P1",
+    "Q": "Q2"
+  },
+  "authors": [
+    "Jingjie Ning",
+    "Xiaochuan Li",
+    "Ji Zeng",
+    "Chenyan Xiong",
+    "Guolin Ke"
+  ],
+  "code_url": "https://github.com/cxcscmu/Auto-Research-Molprop",
+      "tags": [
+        "分子性质",
+        "留出认证",
+        "验证过拟合"
+      ]
+    },
+    {
+      "id": "materials-auto-research",
+      "title": "Auto Research for Materials: Auditable AI-Scientist Workflows with Held-Out Transfer",
+      "title_local": "材料 Auto Research：可审计的留出迁移工作流",
+      "short_title": "材料 Auto Research",
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "preprint",
+      "source_type": "paper",
+      "primary_route": "domain-discovery",
+      "routes": [
+        "domain-discovery",
+        "ml-research-loop"
+      ],
+      "level": 2,
+      "tier": "bridge",
+      "evidence_level": "C",
+      "elevator": "在十个材料端点上搜索特征、模型、表征和训练数据修改，冻结选择后一次性测试留出迁移。",
+      "problem": "材料机器学习方法常在同一验证设置中不断调参，难以区分真实迁移与选择偏差。",
+      "mechanism": "系统执行七次搜索，用内层五折反馈选择代码，冻结后在未触碰留出集评价，并尝试跨任务复用和组合。",
+      "mechanism_steps": [
+        "在四类代码修改中执行搜索",
+        "用内层交叉验证选择并冻结",
+        "在十个未见端点评价迁移与组合"
+      ],
+      "evidence": [
+    "全文报告 701 次代理执行尝试、十个 Matbench 端点，九项内层选择在外层留出中仍是已测单项干预中的最好者。",
+        "组合特征与模型修改报告平均留出改善 26.3%。"
+      ],
+      "limitations": [
+        "最新预印本，来自同一研究线且无独立复现。",
+        "“最好已测干预”不是全局最优，也不是新材料实验发现。"
+      ],
+      "implications": [
+        "留出迁移比内部验证分数更接近真实研究价值。",
+        "需在独立数据与实体材料实验中继续验证。"
+      ],
+  "paper_url": "https://arxiv.org/abs/2607.17100",
+  "source_note": "核验 arXiv:2607.17100v2 全文的七次搜索、701 次尝试、冻结代码、留出协议与边界。",
+  "evidence_locations": [
+    "arXiv:2607.17100v2 §3–§4：四类独立干预轴、内层五折反馈、冻结代码与仅一次读取的 Matbench fold-0 外层留出",
+    "arXiv:2607.17100v2 §5、Figure 2 与 Table 2：701 次尝试、10 个端点、9/10 外层选择保持及 89.3% 非并列排序保持",
+    "arXiv:2607.17100v2 §5 与 Table 3：表征干预从内层 +1.4% 变为外层 -3.0%，冻结的特征与模型组合使六个结构端点平均外层改善 26.3%"
+  ],
+      "source_tier": "T1",
+  "verification_state": "full-text-checked",
+  "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P1",
+    "Q": "Q2"
+  },
+  "authors": [
+    "Jingjie Ning",
+    "Xiaochuan Li",
+    "Shanshan Zhong",
+    "Ji Zeng",
+    "Guolin Ke"
+  ],
+      "tags": [
+        "材料信息学",
+        "留出迁移",
+        "审计"
+      ]
+    },
+    {
+      "id": "robot-scientist-adam",
+      "title": "The automation of science",
+      "title_local": "科学自动化：机器人科学家 Adam",
+      "short_title": "Adam",
+      "year": 2009,
+      "venue": "Science",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "physical-lab",
+      "routes": [
+        "physical-lab",
+        "domain-discovery"
+      ],
+      "level": 3,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "早期把假设生成、实验设计、机器人执行、结果解释和形式化溯源真正闭合的机器人科学家。",
+      "problem": "高通量生物数据增长快于人类分析能力，而传统自动化只执行预设协议。",
+      "mechanism": "Adam 从酵母代谢模型推导基因功能假设，规划缺失株实验，由实验室自动化执行并分析，再用逻辑语言记录知识链。",
+      "mechanism_steps": [
+        "从模型生成可证伪功能基因组假设",
+        "自动设计并物理执行培养实验",
+        "解释结果并更新假设",
+        "用本体记录数据、元数据和结论"
+      ],
+      "evidence": [
+        "Science 正式论文报告 660 万次生物量测量与超过一万个研究单元。",
+        "作者用人工实验确认了 Adam 的结论。"
+      ],
+      "limitations": [
+        "实验域高度受控，目标限于酵母功能基因组。",
+        "耗材补充、废物移除、菌株库和代谢模型仍由人维护；人工确认由同一研究团队完成，不等于独立复现。"
+      ],
+      "implications": [
+        "实体闭环并非大模型时代才出现。",
+        "形式化溯源和可复现元数据仍是当前研究代理应继承的设计。"
+      ],
+      "paper_url": "https://www.science.org/doi/10.1126/science.1165620",
+      "source_note": "核验 Science 正文与 Warwick 机构库全文记录的闭环机制、测量规模、维护边界和人工确认。",
+      "evidence_locations": [
+        "Science p.85 与作者接受稿 p.1 Abstract：自动生成和实体检验假设、超过一万个研究单元及约660万次测量",
+        "Science pp.86–88 与接受稿 pp.2–4、Table 1、Figure 2：20 个假设、13 个孤儿酶、12 个 p<0.05，26,495 条生长曲线和 6,657,024 个 OD600 读数",
+        "Science p.89 与接受稿 p.5 Discussion：系统连续运行、技术员维护、数据库不完整和同团队纯化蛋白复核边界"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "doi": "10.1126/science.1165620",
+      "authors": [
+        "Ross D. King",
+        "Jem Rowland",
+        "Stephen G. Oliver",
+        "Michael Young",
+        "Wayne Aubrey",
+        "Emma Byrne",
+        "Maria Liakata",
+        "Magdalena Markham",
+        "Pinar Pir",
+        "Larisa N. Soldatova",
+        "Andrew Sparkes",
+        "Kenneth E. Whelan",
+        "Amanda Clare"
+      ],
+      "authors_truncated": false,
+      "tags": [
+        "机器人科学家",
+        "功能基因组",
+        "形式化溯源"
+      ]
+    },
+    {
+      "id": "robot-scientist-eve",
+      "title": "Cheaper faster drug development validated by the repositioning of drugs against neglected tropical diseases",
+      "title_local": "机器人科学家 Eve：通过药物重定位加速被忽视热带病研发",
+      "short_title": "Eve",
+      "year": 2015,
+      "venue": "Journal of the Royal Society Interface",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "physical-lab",
+      "routes": [
+        "physical-lab",
+        "domain-discovery"
+      ],
+      "level": 3,
+      "tier": "bridge",
+      "evidence_level": "A",
+      "elevator": "将自动筛选、模型选择和实验复核用于药物重定位，展示机器人科学家从功能基因组扩展到早期药物发现。",
+      "problem": "被忽视疾病的商业激励不足，需要降低早期筛选和候选确认成本。",
+      "mechanism": "Eve 在固定化合物库中运行酵母代理筛选，用构效模型选择下一批候选；后续寄生虫与 DHFR 酶抑制实验由研究者执行。",
+      "mechanism_steps": [
+        "自动进行大规模药物筛选",
+        "模型选择重定位候选",
+        "研究者追加酶抑制与寄生虫实验验证"
+      ],
+      "evidence": [
+        "正式论文报告 TNP-470 对间日疟原虫 DHFR 的 IC50 为 0.16 微摩尔，对人 DHFR 大于 165 微摩尔；该确认实验由研究者执行。"
+      ],
+      "limitations": [
+        "初始子集随机选择；assay、目标和模型问题由人定义，系统不能合成新化合物，只能筛选固定库。",
+        "耗材维护和部分步骤仍需人工；酵母代理筛选与早期活性不等于临床疗效或安全性。"
+      ],
+      "implications": [
+        "实体闭环可显著压缩候选筛选成本。",
+        "药物发现中的自治必须保留转化与安全验证层。"
+      ],
+      "paper_url": "https://doi.org/10.1098/rsif.2014.1289",
+      "source_note": "核验 Royal Society 正文的方法、筛选闭环与后续人工 DHFR 验证。",
+      "evidence_locations": [
+        "Royal Society Interface §2.1/Figure 2 p.2 与 §2.5 p.4：三种运行模式、机器人硬件及批量主动学习 N=64",
+        "Royal Society Interface §§4.1–4.4、Table 1 与 Figure 5，pp.5–6：固定化合物库、机器人命中和研究者后续 DHFR 酶测定",
+        "Royal Society Interface §5.1 p.6 与 §7 p.8：4,800 个初始测量加三轮各96个化合物，以及人工任务定义、维护和缺少合成闭环"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "doi": "10.1098/rsif.2014.1289",
+      "authors": [
+        "Kevin Williams",
+        "Elizabeth Bilsland",
+        "Andrew Sparkes",
+        "Wayne Aubrey",
+        "Michael Young",
+        "Larisa N. Soldatova",
+        "Kurt De Grave",
+        "Jan Ramon",
+        "Michaela de Clare",
+        "Worachart Sirawaraporn",
+        "Stephen G. Oliver",
+        "Ross D. King"
+      ],
+      "authors_truncated": false,
+      "tags": [
+        "药物重定位",
+        "自动筛选",
+        "热带病"
+      ]
+    },
+    {
+      "id": "mobile-robotic-chemist",
+      "title": "A mobile robotic chemist",
+      "title_local": "移动机器人化学家",
+      "short_title": "移动机器人化学家",
+      "year": 2020,
+      "venue": "Nature",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "physical-lab",
+      "routes": [
+        "physical-lab"
+      ],
+      "level": 3,
+      "tier": "core",
+      "evidence_level": "B",
+      "elevator": "让可移动机器人在按人类方式布置的实验室中操作多台仪器，并用贝叶斯搜索自主优化光催化体系。",
+      "problem": "固定管线式自动化难以复用普通实验室设备，也限制实验流程扩展。",
+      "mechanism": "移动机器人在仪器间导航、配液、照射和测量，优化算法依据实验结果选择下一批配方。",
+      "mechanism_steps": [
+        "算法选择候选混合物",
+        "机器人操作现有实验设备",
+        "测量性能并回传",
+        "按反馈选择下一轮"
+      ],
+      "evidence": [
+        "Nature 正式论文展示连续自主实验与催化配方搜索，并公开设备和 24/7 监控细节。"
+      ],
+      "limitations": [
+        "目标是预定义性能优化，不是开放式假设生成。",
+        "硬件维护与安全监控仍需要人类。"
+      ],
+      "implications": [
+        "通用移动平台降低了实体闭环的设备改造门槛。",
+        "优化实验室应与发现新机制区分。"
+      ],
+      "paper_url": "https://www.nature.com/articles/s41586-020-2442-2",
+      "source_note": "核验 Nature 583, 237–241 正式论文，并用可对应分页的机构库接受稿核验正文和方法。",
+      "evidence_locations": [
+        "Nature p.237 与接受稿 p.1 Figure 1：移动机器人访问实体工作站、定位精度和每日可用时间",
+        "Nature pp.238–239 与接受稿 pp.2–3、Figures 2–4：五个人类给定高层假设、超过98,423,325个离散组合、8天43批688次实验及约六倍性能提升",
+        "Nature p.240、接受稿 pp.4–6 与 Online Methods：平台不生成高层假设，688次中11次丢弃，需要远程重置、库存报警和全天候监控"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "doi": "10.1038/s41586-020-2442-2",
+      "authors": [
+        "Benjamin Burger",
+        "Phillip M. Maffettone",
+        "Vladimir V. Gusev",
+        "Catherine M. Aitchison",
+        "Yang Bai",
+        "Xiaoyan Wang",
+        "Xiaobo Li",
+        "Ben M. Alston",
+        "Buyi Li",
+        "Rob Clowes",
+        "Nicola Rankin",
+        "Brandon Harris",
+        "Reiner Sebastian Sprick",
+        "Andrew I. Cooper"
+      ],
+      "authors_truncated": false,
+      "tags": [
+        "移动机器人",
+        "化学",
+        "贝叶斯优化"
+      ]
+    },
+    {
+      "id": "a-lab",
+      "title": "An autonomous laboratory for the accelerated synthesis of inorganic materials",
+      "title_local": "用于加速无机材料合成的自主实验室 A-Lab",
+      "short_title": "A-Lab",
+      "year": 2023,
+      "venue": "Nature",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "physical-lab",
+      "routes": [
+        "physical-lab",
+        "domain-discovery",
+        "evaluation-governance"
+      ],
+      "level": 3,
+      "tier": "core",
+      "evidence_level": "B",
+      "elevator": "将计算数据库、文献抽取、机器学习解释、主动学习和机器人固相合成接成材料实验闭环。",
+      "problem": "计算筛选产生大量候选，但实验合成和失败解释成为材料发现瓶颈。",
+      "mechanism": "研究者给定并筛选 57 个目标；A-Lab 自主生成合成配方，机器人完成粉末处理、加热和 X 射线衍射，失败时主动学习提出新路线。",
+      "mechanism_steps": [
+        "研究者给定目标集合，系统从计算与文献提出配方",
+        "机器人执行并自动表征",
+        "机器学习判断产率",
+        "失败后主动学习生成后续配方"
+      ],
+      "evidence": [
+        "更正后的 Nature 版本报告 17 天完成 353 次实验，在 57 个目标中实现 36 个，成功率 63%。",
+        "Nature 出版更正说明：原报 40 个成功目标经人工复核后 36 个获确认、4 个不确定；“新”只指此前未进入预测平台，不等同于科学上首次发现。"
+      ],
+      "limitations": [
+        "同行评议外部复核质疑部分材料的新颖性以及自动 X 射线衍射与 Rietveld 判读的可靠性。",
+        "目标和前驱体可得性过滤由研究者初始化；实体闭环只覆盖给定目标后的配方优化。"
+      ],
+      "implications": [
+        "A-Lab 是现实闭环规模化的重要实例。",
+        "材料新颖性、结构判定和版本更正必须作为一个版本族联合阅读。"
+      ],
+      "paper_url": "https://www.nature.com/articles/s41586-023-06734-w",
+      "source_note": "联合核验 Nature 正式全文、Nature 出版更正和 PRX Energy 同行评议反证；按一个版本族计数，数字采用更正后口径。",
+      "evidence_locations": [
+        "Nature 更正版 Abstract、Figures 1–4 与 Conclusion，pp.86–91：17天353次实验、36/57成功、4个不确定、17个失败及配方级实体闭环",
+        "Nature Methods—Autonomous target selection、Robotic synthesis 与 Phase analysis：研究者完成前驱体可得性或成本过滤、人工清洁补料、硬件异常处理及部分相分析复核",
+        "Nature Publisher Correction p.E1：平台未见不等于科学上首次、36个确认与4个不确定，并移除误入训练数据的 Zn2Cr3FeO8",
+        "PRX Energy 3, 011002 Abstract、Table I、§IV–§VI：独立复核承认闭环工程贡献，但质疑35/36个成功案例中的相鉴定或新颖性，18/36拟合较差"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V4",
+        "D": "D3",
+        "P": "PX",
+        "Q": "Q1"
+      },
+      "doi": "10.1038/s41586-023-06734-w",
+      "work_family_id": "a-lab",
+      "version_note": "主论文须与 Nature 出版更正和 PRX Energy 独立复核联合阅读；36/57 是更正后结果，新颖性主张已收窄，但相鉴定争议仍在。",
+      "correction_url": "https://www.nature.com/articles/s41586-025-09992-y",
+      "correction_doi": "10.1038/s41586-025-09992-y",
+      "critique_url": "https://journals.aps.org/prxenergy/abstract/10.1103/PRXEnergy.3.011002",
+      "authors": [
+        "Nathan J. Szymanski",
+        "Bernardus Rendy",
+        "Yuxing Fei",
+        "Gerbrand Ceder"
+      ],
+      "authors_truncated": true,
+      "author_count": 16,
+      "tags": [
+        "材料合成",
+        "主动学习",
+        "版本更正"
+      ]
+    },
+    {
+      "id": "coscientist-chemistry",
+      "title": "Autonomous chemical research with large language models",
+      "title_local": "大模型驱动的自主化学研究 Coscientist",
+      "short_title": "Coscientist",
+      "year": 2023,
+      "venue": "Nature",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "physical-lab",
+      "routes": [
+        "physical-lab",
+        "domain-discovery"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "把大模型规划器、网络与文档检索、代码执行和液体工作站接口组合起来，完成化学实验设计与部分执行。",
+      "problem": "实验自动化接口复杂，模型必须理解新设备文档并把高层化学意图转换为可运行协议。",
+      "mechanism": "规划器按需调用检索、代码、文档和实验命令，生成机器人程序；执行错误后查询文档并修正。反应优化循环主要在两个既有映射数据集上进行。",
+      "mechanism_steps": [
+        "检索反应与设备信息",
+        "计算试剂量并生成机器人代码",
+        "执行实验、读取错误并修正",
+        "分析产物，或在既有数据集上迭代优化"
+      ],
+      "evidence": [
+        "Nature 正式论文覆盖六类任务，并实际执行 Suzuki 与 Sonogashira 等反应。",
+        "一次错误设备方法名在查询新文档后被自动修正。"
+      ],
+      "limitations": [
+        "实体实验中微孔板仍由人移动，GC–MS 结果没有驱动下一轮实体实验；因此不构成地图定义的实体闭环。",
+        "颜色任务需要引导提示，网页检索约半数落到维基百科；优化数据可能暴露于训练，完整代码、数据和提示也未公开。"
+      ],
+      "implications": [
+        "大模型能成为异构实验设备的语义编排层。",
+        "Coscientist 与 2026 年的 Co-Scientist 是不同系统；实体闭环必须把人工搬运、权限限制和双重用途披露清楚。"
+      ],
+      "paper_url": "https://www.nature.com/articles/s41586-023-06792-0",
+      "source_note": "核验 Nature 624, 570–578 正式全文、设备流程与安全披露。",
+      "evidence_locations": [
+        "Nature Figure 1 p.571：人类提示、规划器、网页或文档检索、代码和实验模块架构",
+        "Nature Figure 4 p.574 与 Integrated chemical experiment design/Figure 5 pp.574–575：颜色任务的引导提示、人工搬运微孔板、OT-2程序和设备API自修复",
+        "Nature Chemical reasoning capabilities/Figure 6 pp.576–577：两个优化任务查询预先完整测量的数据集，每局最多20次查询",
+        "Nature Discussion p.577 与 Data/Code availability：平台是概念验证，完整数据、代码和提示因安全原因未公开"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "doi": "10.1038/s41586-023-06792-0",
+      "authors": [
+        "Daniil A. Boiko",
+        "Robert MacKnight",
+        "Ben Kline",
+        "Gabe Gomes"
+      ],
+      "authors_truncated": false,
+      "tags": [
+        "化学",
+        "工具调用",
+        "实验设备"
+      ]
+    },
+    {
+      "id": "sample-protein-lab",
+      "title": "Self-driving laboratories to autonomously navigate the protein fitness landscape",
+      "title_local": "自主探索蛋白适应度景观的自驱实验室 SAMPLE",
+      "short_title": "SAMPLE",
+      "year": 2024,
+      "venue": "Nature Chemical Engineering",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "physical-lab",
+      "routes": [
+        "physical-lab",
+        "domain-discovery"
+      ],
+      "level": 3,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "将蛋白设计代理、自动基因组装、无细胞表达和生化表征闭合，连续探索蛋白序列—功能景观。",
+      "problem": "蛋白适应度景观高维且含大量失活序列，人工设计—构建—测试周期慢。",
+      "mechanism": "多输出高斯过程选择序列，自动化系统完成基因组装、表达和热稳定性测量，结果回传后更新模型。",
+      "mechanism_steps": [
+        "代理选择下一批蛋白序列",
+        "机器人完成构建、表达和表征",
+        "质量控制失败步骤",
+        "反馈数据更新模型并继续"
+      ],
+      "evidence": [
+        "正式论文报告同一平台内四个自主活动都找到比起始序列稳定至少 12 摄氏度的酶。",
+        "系统搜索少于研究中定义的组合序列景观 2%，一次设计到数据约九小时。"
+      ],
+      "limitations": [
+        "目标是固定 GH1 热稳定性优化，使用预合成 DNA 片段与无细胞表达代理体系，发现范围受设计空间限定。",
+        "标称一次设计到数据约九小时，但20轮实际历时接近六个月并包含运输暂停、停机、补料和故障；人工重测也来自同一团队。"
+      ],
+      "implications": [
+        "生物实验已能形成长周期真实闭环。",
+        "应把鲁棒性、异常处理和维护时间纳入自治指标。"
+      ],
+      "paper_url": "https://www.nature.com/articles/s44286-023-00002-4",
+      "source_note": "核验 Nature Chemical Engineering 正式全文、数据与代码入口。",
+      "evidence_locations": [
+        "Nature Chemical Engineering Abstract、Introduction 与 Figure 1，pp.97–98：设计—构建—测试—学习实体闭环及标称约九小时周期",
+        "Nature Chemical Engineering Figures 2–4，pp.100–102：1,352条序列空间、四次同平台运行、每轮3个设计共20轮及少于2%的高改善序列",
+        "Nature Chemical Engineering Human characterization/Figure 5 与 Discussion p.103：同团队人工重测、真实近六个月历时、2.5个月运输暂停和维护边界"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "doi": "10.1038/s44286-023-00002-4",
+      "authors": [
+        "Jacob T. Rapp",
+        "Bennett J. Bremer",
+        "Philip A. Romero"
+      ],
+      "authors_truncated": false,
+      "tags": [
+        "蛋白工程",
+        "贝叶斯优化",
+        "异常处理"
+      ]
+    },
+    {
+      "id": "discoveryworld",
+      "title": "DiscoveryWorld: A Virtual Environment for Developing and Evaluating Automated Scientific Discovery Agents",
+      "title_local": "DiscoveryWorld：开发与评测自动科学发现智能体的虚拟环境",
+      "short_title": "DiscoveryWorld",
+      "year": 2024,
+      "venue": "NeurIPS 2024 Datasets and Benchmarks",
+      "status": "peer-reviewed",
+      "source_type": "benchmark",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "domain-discovery"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "用 24 个多模态、长程、虚构科学任务模板及五种参数种子形成 120 个实例，测试智能体是否能形成假设、做实验和解释结果。",
+      "problem": "静态问答无法测量科学发现中的探索、实验设计和根据异常修改假设。",
+      "mechanism": "智能体在模拟世界中操作对象和仪器，任务用完成度、过程报告卡和最终知识解释共同评分。",
+      "mechanism_steps": [
+        "观察未知模拟现象",
+        "提出并执行实验",
+        "整合结果并完成任务",
+        "从过程与解释多维评分"
+      ],
+      "evidence": [
+        "正式论文报告 24 个任务模板乘五种参数种子形成 120 个零样本实例，强基线在多数实例上仍然失败。",
+        "虚构规律降低了直接训练记忆带来的污染。"
+      ],
+      "limitations": [
+        "模拟环境相对现实科学低保真。",
+        "自动评分不能覆盖真实伦理、安全与制度责任。"
+      ],
+      "implications": [
+        "科学代理评测需要交互过程而非只看最终文本。",
+        "模拟器适合诊断机制，但不能替代现实验证。"
+      ],
+      "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/13836f251823945316ae067350a5c366-Abstract-Datasets_and_Benchmarks_Track.html",
+      "source_note": "核验 NeurIPS 2024 正式记录与作者全文的 24 个模板、120 个实例、三类指标、结果表和低保真限制。",
+      "evidence_locations": [
+        "NeurIPS 正式页 Abstract；作者全文第 3.2 节：8 个主题×3 个难度=24 个模板，每模板 5 个种子形成 120 个实例",
+        "作者全文第 3.4 节：完成度、过程报告卡和解释知识三类指标；表 4：各模板五种子平均结果",
+        "附录 B—Simulation Fidelity 与 Agent Cost：低保真、抽象动作空间及完整 120 实例成本"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "doi": "10.52202/079017-0324",
+      "authors": [
+        "Peter Jansen",
+        "Marc-Alexandre Côté",
+        "Tushar Khot",
+        "Erin Bransom",
+        "Bhavana Dalvi Mishra",
+        "Bodhisattwa Prasad Majumder",
+        "Oyvind Tafjord",
+        "Peter Clark"
+      ],
+      "code_url": "https://github.com/allenai/discoveryworld",
+      "tags": [
+        "虚拟环境",
+        "长程探索",
+        "过程评价"
+      ]
+    },
+    {
+      "id": "corebench",
+      "title": "CORE-Bench: Fostering the Credibility of Published Research Through a Computational Reproducibility Agent Benchmark",
+      "title_local": "CORE-Bench：计算复现智能体基准",
+      "short_title": "CORE-Bench",
+      "year": 2025,
+      "venue": "TMLR",
+      "status": "peer-reviewed",
+      "source_type": "benchmark",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "把 90 篇论文转成 270 个分难度的复现任务，测量代理安装依赖、运行代码和核对结果的能力。",
+      "problem": "已有科研代码常因环境、依赖与文档问题无法复现，人工逐篇核验成本高。",
+      "mechanism": "代理在论文和代码材料上执行计算复现，自动评价文本或图像结果是否匹配预期。",
+      "mechanism_steps": [
+        "从论文构造不同难度复现任务",
+        "代理搭建环境并运行代码",
+        "自动比较输出与预期"
+      ],
+      "evidence": [
+        "正式论文覆盖计算机科学、社会科学和医学；最强基线在最难任务准确率仅 21%。"
+      ],
+      "limitations": [
+        "使用既有代码和数据，测量复现而非原创研究。",
+        "自动评价难以判断结果背后的科学解释。"
+      ],
+      "implications": [
+        "复现是研究代理进入真实科研前的基础门槛。",
+        "跨学科依赖管理仍是显著瓶颈。"
+      ],
+      "paper_url": "https://openreview.net/forum?id=BsMMc4MEGS",
+      "source_note": "核验 TMLR 正式记录与作者全文的 90 个仓库、270 项任务、评价沙箱、表 5 结果和后续 v1.1 构念效度边界。",
+      "evidence_locations": [
+        "TMLR/作者全文 Abstract 与第 1 节 Contributions：90 个 CodeOcean 仓库、三档任务与 270 项总数",
+        "第 3 节 Evaluation Harness：181 个问题、每任务两小时、隔离虚拟机；第 4 节表 5：Hard 21.48%",
+        "第 4.3 节：成本扩展；Conclusion：计算复现是必要步骤而不是新研究本身"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "authors": [
+        "Zachary S. Siegel",
+        "Sayash Kapoor",
+        "Nitya Nadgir",
+        "Benedikt Stroebl",
+        "Arvind Narayanan"
+      ],
+      "code_url": "https://github.com/siegelz/core-bench",
+      "version_note": "2026 年 CORE-Bench v1.1/OOD 后续工作指出原 Hard 版本存在构念效度捷径与饱和问题；原 90/270/21.48% 数字保留，但不作为当前模型能力上限。",
+      "related_version_url": "https://arxiv.org/abs/2606.26158",
+      "tags": [
+        "计算复现",
+        "跨学科",
+        "依赖环境"
+      ]
+    },
+    {
+      "id": "rebench",
+      "title": "RE-Bench: Evaluating frontier AI R&D capabilities of language model agents against human experts",
+      "title_local": "RE-Bench：对照人类专家评测前沿人工智能研发能力",
+      "short_title": "RE-Bench",
+      "year": 2025,
+      "venue": "ICML 2025",
+      "status": "peer-reviewed",
+      "source_type": "benchmark",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "ml-research-loop"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "在匹配总时间预算和任务条件下，比较代理与人类专家处理七个开放式机器学习研发任务的时间—性能曲线。",
+      "problem": "单一终点分数无法区分代理的短程吞吐优势和人类的长期研究优势。",
+      "mechanism": "人类专家和代理在多种时间预算下优化真实机器学习任务，用 best-of-k 和资源等价协议比较。",
+      "mechanism_steps": [
+        "定义七个开放式研发环境",
+        "在匹配预算下运行人类与代理",
+        "比较不同时间尺度的最佳结果"
+      ],
+      "evidence": [
+        "正式论文记录 71 次人类八小时尝试和 61 位专家。",
+        "代理在每环境两小时总预算下约为人类四倍，八小时时被人类略超；把不同尝试汇总到 32 小时总预算后，人类约为代理两倍。"
+      ],
+      "limitations": [
+        "只有七项任务，best-of-k 与预算分配影响结论。",
+        "短程高吞吐不等于长期科研替代。"
+      ],
+      "implications": [
+        "评测必须报告时间尺度，而不只报告总得分。",
+        "当前代理优势主要在短期并行试错。"
+      ],
+      "paper_url": "https://proceedings.mlr.press/v267/wijk25a.html",
+  "source_note": "核验 ICML 2025 正文的人类样本、七个环境与按总时间预算聚合的人机曲线。",
+  "evidence_locations": [
+    "PMLR 正式页 Abstract：7 个环境、61 位专家、71 次八小时尝试与不同总时间预算下的人机比较",
+    "arXiv:2411.15114 正文 Evaluation environments：七项均为目标预先给定、可连续计分的机器学习研发环境",
+    "arXiv:2411.15114 正文 Discussion and Limitations：八小时窗口、环境数量、任务覆盖和现实项目规模边界"
+  ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q3"
+      },
+      "authors": [
+        "Hjalmar Wijk",
+        "Tao Roa Lin",
+        "Joel Becker",
+        "Sami Jawhar",
+        "Neev Parikh",
+        "Thomas Broadley",
+        "Lawrence Chan",
+        "Michael Chen",
+        "Joshua M Clymer",
+        "Jai Dhyani",
+        "Elena Ericheva",
+        "Katharyn Garcia",
+        "Brian Goodrich",
+        "Nikola Jurkovic",
+        "Megan Kinniment",
+        "Aron Lajko",
+        "Seraphina Nix",
+        "Lucas Jun Koba Sato",
+        "William Saunders",
+        "Maksym Taran",
+        "Ben West",
+        "Elizabeth Barnes"
+      ],
+      "tags": [
+        "人机对照",
+        "时间预算",
+        "机器学习研发"
+      ]
+    },
+    {
+      "id": "mlebench",
+      "title": "MLE-bench: Evaluating Machine Learning Agents on Machine Learning Engineering",
+      "title_local": "MLE-bench：机器学习工程智能体评测",
+      "short_title": "MLE-bench",
+      "year": 2025,
+      "venue": "ICLR 2025",
+      "status": "peer-reviewed",
+      "source_type": "benchmark",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "ml-research-loop"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "用 75 个离线重建的 Kaggle 竞赛和公开人类排行榜测试代理的端到端机器学习工程能力。",
+      "problem": "小型学术任务难以反映数据准备、训练、调试和资源管理的综合难度。",
+      "mechanism": "每个离线竞赛提供任务、数据和评价工具，代理在给定预算内训练并提交预测，与 Kaggle 奖牌阈值比较。",
+      "mechanism_steps": [
+        "整理 75 个多领域 Kaggle 竞赛",
+        "代理自主准备数据、训练与调试",
+        "按隐藏得分和人类奖牌线评价"
+      ],
+      "evidence": [
+        "ICLR 正式论文报告，o1-preview 加 AIDE 在 16.9% 的离线竞赛达到至少铜牌水平。"
+      ],
+      "limitations": [
+        "任务是用新切分和重实现评分的离线竞赛，不是代理实时参加 Kaggle；得分导向也不涵盖科学解释。",
+        "排行榜与公开方案存在潜在训练污染。"
+      ],
+      "implications": [
+        "机器学习工程已可被大规模标准化测试。",
+        "时间留出与污染分析应成为 Auto-Research 基准常规部分。"
+      ],
+      "paper_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/7e3767db483c942b883eb4f8cfb74e31-Abstract-Conference.html",
+  "source_note": "核验 ICLR 2025 正文的离线竞赛构建、75 个任务与 16.9% 奖牌结果。",
+  "evidence_locations": [
+    "ICLR 正式 PDF p.1 Abstract：75 个竞赛与 o1-preview+AIDE 的 16.9% 至少铜牌结果",
+    "ICLR 正式 PDF §2.1 pp.2–3：从 5,673 个竞赛筛至 586 个，再人工筛为 75 个并重建训练、测试和本地评分",
+    "ICLR 正式 PDF Table 1 p.3、Table 2 p.5、Figure 3 p.7：奖牌阈值、主结果与 pass@6 相对 pass@1 的资源扩展"
+  ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "authors": [
+        "Jun Shern Chan",
+        "Neil Chowdhury",
+        "Oliver Jaffe",
+        "James Aung",
+        "Dane Sherburn",
+        "Evan Mays",
+        "Giulio Starace",
+        "Kevin Liu",
+        "Leon Maksin",
+        "Tejal Patwardhan",
+        "Lilian Weng",
+        "Aleksander Mądry"
+      ],
+      "code_url": "https://github.com/openai/mle-bench",
+      "tags": [
+        "Kaggle",
+        "机器学习工程",
+        "人类基线"
+      ]
+    },
+    {
+      "id": "mlrbench",
+      "title": "MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research",
+      "title_local": "MLR-Bench：开放式机器学习研究智能体评测",
+      "short_title": "MLR-Bench",
+      "year": 2025,
+      "venue": "NeurIPS 2025 Datasets and Benchmarks",
+      "status": "peer-reviewed",
+      "source_type": "benchmark",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "paradigm-orchestration",
+        "ml-research-loop"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "框架覆盖 201 个研讨会研究任务并拆成构想、提案、实验和论文四阶段；受成本限制，实际端到端执行实验只抽取 10 个任务—想法—提案三元组。",
+      "problem": "竞赛型机器学习基准有明确目标，但开放式研究还需要判断创新、方法与实验是否真实。",
+      "mechanism": "框架提供任务、模块化研究代理和带结构量表的模型评审器，并用人类评价校准自动评分。",
+      "mechanism_steps": [
+        "从真实研讨会提炼 201 个开放任务",
+        "从 201 项框架中抽取 10 个三元组执行完整研究阶段",
+        "模型评审与人类校准评价结果"
+      ],
+      "evidence": [
+        "NeurIPS 正式论文报告，在实际执行的 10 项中，Claude Code 有 8 项使用占位或合成结果；这不是全部 201 项或所有代理的总体比例。",
+        "评审器与专家评价显示较高一致性。"
+      ],
+      "limitations": [
+        "端到端实验子集只有 10 项，最终评价仍大量依赖两个模型裁判。",
+        "任务来自既有研讨会主题，可能奖励模仿已见研究范式。"
+      ],
+      "implications": [
+        "流畅想法和论文不能掩盖无效实验。",
+        "端到端基准必须验证代码运行与结果真实性。"
+      ],
+      "paper_url": "https://papers.nips.cc/paper_files/paper/2025/hash/ab8dd000d6f87f40061a73f8bca7fae4-Abstract-Datasets_and_Benchmarks_Track.html",
+  "source_note": "核验 NeurIPS 2025 正文的 201 项框架、10 项执行子集与 Claude Code 8/10 无效结果。",
+  "evidence_locations": [
+    "NeurIPS 正式页 Abstract 与 arXiv:2505.19955 §2：201 项用于四阶段框架，实验阶段只人工抽取 10 个任务—想法—提案三元组",
+    "arXiv:2505.19955 §2.1 与 §4：Gemini 2.5 Pro Preview、Claude 3.7 Sonnet 双模型裁判及 10 位专家校准",
+    "arXiv:2505.19955 Table 5、§5 Experiment Results Hallucination 与 Appendix A：10 项执行结果、Claude Code 8/10 使用合成或占位数据及子集来源"
+  ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+  "authors": [
+        "Hui Chen",
+        "Miao Xiong",
+        "Yujie Lu",
+        "Wei Han",
+        "Ailin Deng",
+        "Yufei He",
+        "Jiaying Wu",
+        "Yibo Li",
+        "Yue Liu",
+    "Bryan Hooi"
+  ],
+  "doi": "10.52202/085713-3945",
+      "tags": [
+        "开放式研究",
+        "虚构结果",
+        "过程评价"
+      ]
+    },
+    {
+      "id": "paperbench",
+      "title": "PaperBench: Evaluating AI's Ability to Replicate AI Research",
+      "title_local": "PaperBench：评测人工智能复现人工智能研究的能力",
+      "short_title": "PaperBench",
+      "year": 2025,
+      "venue": "ICML 2025",
+      "status": "peer-reviewed",
+      "source_type": "benchmark",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "ml-research-loop"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "要求代理从零复现 20 篇 ICML 论文，并用作者参与制定的 8,316 项分层量表评价长程研究执行。",
+      "problem": "短代码任务无法测量跨数十小时理解论文、搭建实验和诊断失败的能力。",
+      "mechanism": "代理获取论文与计算环境后自行实现；提交代码被执行，再由细粒度量表和模型裁判评分。",
+      "mechanism_steps": [
+        "选择 20 篇 ICML 2024 重点论文",
+        "作者共同建立分层复现量表",
+        "代理在长时限内实现并执行",
+        "按 8,316 项要求评分"
+      ],
+      "evidence": [
+        "主设置最强代理平均复现分 21.0%。",
+        "三论文 48 小时子集上，人类 best-of-3 为 41.4%，o1 为 26.6%。"
+      ],
+      "limitations": [
+        "只覆盖机器学习论文，裁判仍使用模型。",
+        "计算成本高且不测试原创问题选择。"
+      ],
+      "implications": [
+        "当前代理在工具使用、持续规划和不过早结束方面仍弱。",
+        "复现基准给端到端系统提供比工作坊接收更严格的质量参照。"
+      ],
+      "paper_url": "https://proceedings.mlr.press/v267/starace25a.html",
+  "source_note": "核验 ICML 2025 正文的 20 篇论文、8,316 个量表节点、主设置，以及三论文 48 小时人类子集。",
+  "evidence_locations": [
+    "PMLR 正式页 Abstract 与 arXiv:2504.01848 §1：20 篇论文、8,316 个量表节点、21.0% 主设置、JudgeEval F1=0.83 及三论文人机结果",
+    "arXiv:2504.01848 §2.1：候选只获得论文和澄清补充，须从零创建含 reproduce.sh 的可执行仓库",
+    "arXiv:2504.01848 Table 4、Table 5、Figure 3：主设置、脚手架或时限变体，以及八位博士参与且 48 小时终点仅比较三论文子集"
+  ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q3"
+      },
+      "authors": [
+        "Giulio Starace",
+        "Oliver Jaffe",
+        "Dane Sherburn",
+        "James Aung",
+        "Jun Shern Chan",
+        "Leon Maksin",
+        "Rachel Dias",
+        "Evan Mays",
+        "Benjamin Kinsella",
+        "Wyatt Thompson",
+        "Johannes Heidecke",
+        "Amelia Glaese",
+        "Tejal Patwardhan"
+      ],
+      "related_ids": [
+        "ai-scientist-nature"
+      ],
+      "tags": [
+        "论文复现",
+        "长程任务",
+        "人机比较"
+      ]
+    },
+    {
+      "id": "rexbench",
+      "title": "RExBench: Can coding agents autonomously implement AI research extensions?",
+      "title_local": "RExBench：编码智能体能否自主实现人工智能研究扩展",
+      "short_title": "RExBench",
+      "year": 2026,
+      "venue": "ACL 2026",
+      "status": "peer-reviewed",
+      "source_type": "benchmark",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "ml-research-loop"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "给代理论文、原代码和专家撰写但未实现的扩展说明，直接测试从复现迈向新实验的能力。",
+      "problem": "复制已有代码与真正实现未知研究扩展之间存在关键能力鸿沟。",
+      "mechanism": "代理生成代码补丁，在受控环境执行，由数值检查和测试评价是否正确实现专家扩展。",
+      "mechanism_steps": [
+        "构造 12 个真实未实现扩展",
+        "代理阅读论文与仓库并生成补丁",
+        "沙箱执行并自动验证"
+      ],
+      "evidence": [
+        "ACL 正式论文主实验在 aider 与 OpenHands 两种框架上测试 12 个大模型代理；最佳自主成功率约 33%。",
+    "主实验模型在标准人类提示下最佳仍低于 44%；最终附录中的较新 Claude 4.5 Opus 加 OpenHands 在 Hints 设置为 62%，Detailed Hints 为 50%，因此 44% 不是最终版本的全局上界。"
+      ],
+      "limitations": [
+        "任务数小且集中人工智能、机器学习和自然语言处理。",
+        "专家已给出扩展说明，尚未测试问题提出。"
+      ],
+      "implications": [
+        "研究扩展比复现更接近 Auto-Research 的真实门槛。",
+        "提示帮助有限，说明瓶颈不只是任务理解。"
+      ],
+      "paper_url": "https://aclanthology.org/2026.acl-long.745/",
+  "source_note": "核验 ACL 2026 正文与附录：12 项扩展、12 个代理、两种框架，以及主实验与后续新模型提示设置的不同上界。",
+  "evidence_locations": [
+    "ACL 正式页 Abstract 与正式 PDF §4.1：12 项扩展、12 个代理、aider 与 OpenHands 两种框架，每个任务和设置运行五次",
+    "ACL 正式 PDF §4.2–§4.3：专家提供两级累积提示；主设置无提示最佳约 33%，提示设置最高约 43%",
+    "ACL 正式 PDF Appendix I、Figure 9 与 Table 5 pp.18–20：Claude 4.5 Opus+OpenHands 的 No Hints 42%、Hints 62%、Detailed Hints 50%"
+  ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+  "doi": "10.18653/v1/2026.acl-long.745",
+  "preprint_url": "https://arxiv.org/abs/2506.22598",
+  "version_note": "正式 ACL 2026 版本为主记录；arXiv 预印本并入同一版本族，附录新模型结果与主实验分别报告。",
+      "authors": [
+        "Nicholas Edwards",
+        "Yukyung Lee",
+        "Yujun Audrey Mao",
+        "Yulu Qin",
+        "Sebastian Schuster",
+        "Najoung Kim"
+      ],
+      "tags": [
+        "研究扩展",
+        "代码补丁",
+        "负面基准"
+      ]
+    },
+    {
+      "id": "autoexperiment",
+      "title": "From Reproduction to Replication: Evaluating Research Agents with Progressive Code Masking",
+      "title_local": "从复现到重复验证：用渐进式代码遮蔽评测研究智能体",
+      "short_title": "AUTOEXPERIMENT",
+      "year": 2026,
+      "venue": "ICLR 2026",
+      "status": "peer-reviewed",
+      "source_type": "benchmark",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "ml-research-loop"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "通过逐步遮蔽研究仓库中的关键实现，把从局部补全到高自主实验的难度连续化。",
+      "problem": "只报告完整任务成功率，无法定位代理在研究自主性增加时何处失效。",
+      "mechanism": "基准从论文描述构造代码任务，控制可见代码比例；代理可交互运行和调试，再以真实实验输出评分。",
+      "mechanism_steps": [
+        "逐级遮蔽现有研究实现",
+        "代理根据论文补全并运行",
+        "比较交互、多次尝试和自主性强度"
+      ],
+      "evidence": [
+        "ICLR 正式论文从 4 篇论文中选出 85 个可遮蔽函数；单函数 n=1 只是最低遮蔽难度，不是最高自主设置。",
+        "n=1 时最佳 Claude 3.7 Sonnet 为 36.5%，到 n=2 降为 9.6%，n=5 接近零；更接近完整重复验证的 n=all 有效样本更小。"
+      ],
+      "limitations": [
+        "只覆盖 4 篇机器学习论文及 Python 实现；85 是函数总数，高遮蔽设置的有效样本明显更小。",
+        "评价复现实现而非研究构想。"
+      ],
+      "implications": [
+        "“自主性”应按缺失信息和人类脚手架连续测量。",
+        "一次成功率会低估试错价值，也会掩盖成本。"
+      ],
+      "paper_url": "https://iclr.cc/virtual/2026/poster/10007273",
+  "source_note": "核验 ICLR 2026 正式版本与 OpenReview 全文 qBcHWGBnIb 的渐进遮蔽设计、表格结果和样本口径。",
+  "evidence_locations": [
+    "ICLR 正式页 Abstract 与 arXiv:2506.19724 §2、Table 1：4 篇论文、85 个 n=1 函数样本及更高遮蔽级别的组合和抽样口径",
+    "arXiv:2506.19724 §3.1 Figure 2：n=1 最佳 36.5%、n=2 约 9.6%、n=5 多数接近零",
+    "arXiv:2506.19724 §3.2 Figure 3、§3.3 Table 3 与 Limitations：pass@k、动态交互优势及仅机器学习 Python 论文的边界"
+  ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+  "related_ids": [
+    "ai-scientist-nature"
+  ],
+  "authors": [
+    "Gyeongwon J Kim",
+    "Alex Wilf",
+    "Louis-Philippe Morency",
+    "Daniel Fried"
+  ],
+  "code_url": "https://github.com/j1mk1m/AutoExperiment",
+  "openreview_url": "https://openreview.net/forum?id=qBcHWGBnIb",
+      "tags": [
+        "代码遮蔽",
+        "自主性梯度",
+        "交互调试"
+      ]
+    },
+    {
+      "id": "inquitree",
+      "title": "InquiTree: Evaluating AI Agents in the Scientific Inquiry Loop with Paper-Derived Research Trees",
+      "title_local": "InquiTree：用论文派生研究树评测科学探究循环中的人工智能智能体",
+      "short_title": "InquiTree",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "status": "preprint",
+      "source_type": "benchmark",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "domain-discovery"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "C",
+      "elevator": "把论文依赖关系构造成交互研究树，测试代理能否在多轮反馈中更新判断、发现异常并积累进展。",
+      "problem": "单步知识题不能暴露科学探究中的认知隧道和长程退化。",
+      "mechanism": "代理逐步选择研究方向并接收由论文结构派生的反馈；训练截止后论文用于检查记忆污染。",
+      "mechanism_steps": [
+        "从论文构建交互研究树",
+        "代理多轮提议方向并接收反馈",
+        "评价判断更新、异常检测与截止后泛化"
+      ],
+      "evidence": [
+        "预印本在 30 篇神经科学论文池上评价，开放 IT-18 子集含 18 篇论文与 120 个子主题。",
+        "长程循环可进一步削弱本已接近随机的假结果识别；除 DeepSeek-R1 外，模型在以发布日期代理的截止后子集上下降。"
+      ],
+      "limitations": [
+        "最新预印本，开放子集较小。",
+        "反馈来自论文派生环境，不等于未知现实世界。"
+      ],
+      "implications": [
+        "短程能力不能推断长程科研能力。",
+        "评价需要记录是否真正利用新证据，而非只累积文本。"
+      ],
+      "paper_url": "https://arxiv.org/abs/2606.09550",
+      "source_note": "核验 arXiv:2606.09550v1 全文；未找到 TMLR 一手投稿记录，因此 venue 只标 arXiv preprint。",
+      "evidence_locations": [
+        "arXiv:2606.09550v1：图 1–2 与第 3 节，PDF pp. 1–4",
+        "第 4.1 节与表 2，p. 5；第 4.3 节与图 3，p. 6；第 4.4 节、表 3 与图 4，p. 7",
+        "第 6 节 Limitations，p. 8；附录 E、表 4–5，pp. 15–16"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P1",
+        "Q": "Q2"
+      },
+      "authors": [
+        "Shaoyang Cui"
+      ],
+      "tags": [
+        "长程探究",
+        "认知隧道",
+        "时间留出"
+      ]
+    },
+    {
+      "id": "era-data-leakage",
+      "title": "Information leakage from data revisions in retrospective forecasts",
+      "title_local": "回顾性预测中的数据修订信息泄漏",
+      "short_title": "ERA 数据泄漏复核",
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "preprint",
+      "source_type": "paper",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "ml-research-loop"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "C",
+      "elevator": "独立重建 ERA 疫情预测在当时可见的实时数据，指出回顾性修订数据可能解释原案例的大部分优势。",
+      "problem": "回顾性预测若使用赛季后修订数据，会把未来信息泄漏误认为算法能力。",
+      "mechanism": "研究重建实时与最终数据版本，按修订强度分箱重算加权区间分数，区分算法收益和数据修订收益。",
+      "mechanism_steps": [
+        "获取 ERA 复现材料",
+        "重建预测时可见的数据版本",
+        "按修订强度重算并比较得分"
+      ],
+      "evidence": [
+        "预印本认为原疫情案例约 11% 的优势几乎可由数据修订泄漏解释。",
+        "无或极小修订子集两系统接近，主要差异来自强修订样本。"
+      ],
+      "limitations": [
+        "尚未同行评议，只复核 ERA 六个案例中的一个。",
+        "论文也记录 ERA 后续前瞻性系统在 2025/26 赛季表现强，不能否定整个方法。"
+      ],
+      "implications": [
+        "独立时间正确复核能实质改变对自动研究结果的判断。",
+        "所有回顾性科学代理评价都应保存当时可见数据快照。"
+      ],
+  "paper_url": "https://arxiv.org/abs/2608.05883",
+  "source_note": "核验 2026-08-06 arXiv 全文、表 1 与对后续前瞻结果的限定。",
+  "evidence_locations": [
+    "arXiv:2608.05883v1 pp.1–2：数据修订造成回顾性信息泄漏的机制、52 个地区与 0–3 周预测设置",
+    "arXiv:2608.05883v1 Figure 1 与 Table 1，pp.2–3：按相对或绝对修订强度分箱，极小修订子集接近平手、优势集中在强修订样本",
+    "arXiv:2608.05883v1 Real-time forecasting performance of ERA，p.3：2025/26 前瞻系统采用修订方法并领先，不与针对 2024/25 回顾设计的质疑冲突"
+  ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D3",
+        "P": "P1",
+        "Q": "Q2"
+      },
+  "authors": [
+        "Johannes Bracher",
+    "Sebastian Funk"
+  ],
+  "code_url": "https://github.com/jbracher/era-replication",
+      "related_ids": [
+        "era-nature"
+      ],
+      "tags": [
+        "独立复核",
+        "数据修订",
+        "时间泄漏"
+      ]
+    },
+    {
+      "id": "labsafety-bench",
+      "title": "Benchmarking large language models on safety risks in scientific laboratories",
+      "title_local": "科学实验室安全风险大模型基准",
+      "short_title": "LabSafety Bench",
+      "year": 2026,
+      "venue": "Nature Machine Intelligence",
+      "status": "peer-reviewed",
+      "source_type": "benchmark",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "physical-lab"
+      ],
+      "level": 0,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "用危险识别、风险评估和后果预测系统测试大模型在实验室部署前的安全判断能力。",
+      "problem": "实验代理的语言流畅性容易造成过度信任，但现实错误可能引发人身和环境伤害。",
+      "mechanism": "基准包含选择题和现实开放场景，跨多类实验危害评价 19 个大模型与视觉语言模型。",
+      "mechanism_steps": [
+        "构建 765 道选择题和 404 个现实场景",
+        "形成 3,128 个开放式安全任务",
+        "比较 19 个模型的危险识别与推理"
+      ],
+      "evidence": [
+        "正式论文报告，没有模型在危险识别上超过 70% 准确率。",
+        "专有模型在开放式推理中没有稳定优势。"
+      ],
+      "limitations": [
+        "文本与图像场景仍不能覆盖真实机器人故障和传感器误差。",
+        "安全知识得分不等于在压力和工具权限下会安全行动。"
+      ],
+      "implications": [
+        "当前模型不足以无监督控制高风险实验室。",
+        "安全基准、权限控制和物理联锁必须同时存在。"
+      ],
+      "paper_url": "https://www.nature.com/articles/s42256-025-01152-1",
+      "source_note": "核验 Nature Machine Intelligence 正式摘要和期刊元数据，并用 DOI 明确关联的 arXiv:2410.14182v4 全文核验题目规模、模型结果与方法边界。",
+      "evidence_locations": [
+        "Nature Machine Intelligence 8, 20–31：Abstract p. 20；图 1 p. 21；第 2.1 节与图 2 p. 24",
+        "第 2.2 节与图 3 pp. 25–26；第 2.3 节与图 4 p. 27；第 3 节与图 5 p. 28",
+        "Discussion pp. 29–30；第 6.1 节、图 6 与第 6.1.1 节 p. 31；全文位置由 DOI 关联的 arXiv v4 核验"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q3"
+      },
+      "doi": "10.1038/s42256-025-01152-1",
+      "tags": [
+        "实验室安全",
+        "危险识别",
+        "过度信任"
+      ]
+    },
+    {
+      "id": "automatic-review-faulty-reasoning",
+      "title": "Automatic Reviewers Fail to Detect Faulty Reasoning in Research Papers: A New Counterfactual Evaluation Framework",
+      "title_local": "自动评审器无法识别研究论文中的错误推理：反事实评测框架",
+      "short_title": "自动评审推理反证",
+      "year": 2026,
+      "venue": "TACL",
+      "status": "peer-reviewed",
+      "source_type": "benchmark",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "paradigm-orchestration"
+      ],
+      "level": 0,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "用只改变结果—解释—主张一致性的整篇论文反事实版本，直接检验自动评审器能否发现研究逻辑错误。",
+      "problem": "自动评审可能依赖语言表面、背景知识或总体印象，却没有真正检查实验结果是否支持结论与主张。",
+      "mechanism": "框架从近 150 篇人工智能与自然语言处理论文抽取研究逻辑，分别生成破坏逻辑的关键编辑和不改变含义的中性编辑，再比较多种自动评审器的评论维度、情感和评分变化。",
+      "mechanism_steps": [
+        "抽取方法、结果、结论与发现之间的支持关系",
+        "生成逻辑关键反事实与表面中性对照版本",
+        "让多种自动评审器分别审阅原文和反事实论文",
+        "用混合效应模型和多重检验校正比较评审变化"
+      ],
+      "evidence": [
+        "TACL 正式论文报告，在显著性水平 0.05 下，所有被测自动评审器对逻辑关键编辑和中性编辑的关注维度、情感或评分变化均无显著差异。",
+        "预先知道错误位置的 ORACLE 评审器在三个维度上均呈显著差异，支持评测管线确实能检出理想反应。"
+      ],
+      "limitations": [
+        "样本集中在人工智能与自然语言处理，反事实论文由模型自动生成和筛选，不能代表所有学科与所有评审错误类型。",
+        "研究隔离的是内部研究逻辑一致性这一必要子能力，不是对整体同行评议质量的完整排名。"
+      ],
+      "implications": [
+        "自动评审不能单独作为端到端研究代理的可信质量闸门。",
+        "评审基准应加入中性对照、逻辑关键反事实和人类—模型协作，而不只比较总体评分相关性。"
+      ],
+      "paper_url": "https://aclanthology.org/2026.tacl-1.22/",
+      "source_note": "核验 TACL 2026 正式全文的第 4 节反事实框架、第 6.2 节结果、图 3–5、表 4 和附录表 5。",
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q3"
+      },
+      "evidence_locations": [
+        "第 4 节与图 2：反事实评测管线及关键/中性编辑",
+        "第 6.2 节、图 3–5：所有被测自动评审器在三个维度均无显著差异",
+        "第 6.2 节与表 4、附录表 5：模型排序、p 值与 ORACLE 有效性检验"
+      ],
+      "doi": "10.1162/tacl.a.642",
+      "authors": [
+        "Nils Dycke",
+        "Iryna Gurevych"
+      ],
+      "code_url": "https://github.com/UKPLab/tacl2026-counter-review-logic",
+      "related_ids": [
+        "ai-scientist-nature"
+      ],
+      "tags": [
+        "自动评审",
+        "错误推理",
+        "反事实评测"
+      ]
+    },
+    {
+      "id": "autoresearchbench",
+      "title": "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery",
+      "title_local": "AutoResearchBench：复杂科学文献发现智能体基准",
+      "short_title": "AutoResearchBench",
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "preprint",
+      "source_type": "benchmark",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "knowledge-ideation"
+      ],
+      "level": 0,
+      "tier": "core",
+      "evidence_level": "C",
+      "elevator": "在三百余万篇固定全文语料上，分别测试代理能否锁定唯一目标论文，以及穷尽满足多约束条件的论文集合。",
+      "problem": "科研代理若找不到正确且完整的先行文献，后续新颖性判断和证据综合都会建立在错误上下文上。",
+      "mechanism": "基准把复杂线索转成 Deep 与 Wide 两类任务；代理用统一工具反复搜索、阅读全文和排除边界候选，最终以精确命中或集合 IoU 评分。",
+      "mechanism_steps": [
+        "从多约束线索构造深搜或广搜问题",
+        "在固定全文语料中反复检索与阅读",
+        "提交唯一论文、弃答或完整集合",
+        "以精确匹配和集合 IoU 评价"
+      ],
+      "evidence": [
+        "预印本包含 1,000 题：600 个 Deep 查询和 400 个 Wide 查询；Wide 共对应 3,692 个答案。",
+        "完整基准上，Claude Opus 4.6 的 Deep Accuracy 为 9.39%，Gemini 3.1 Pro Preview 的 Wide IoU 为 9.31%。"
+      ],
+      "limitations": [
+        "昂贵端到端系统只在随机 50 题子集运行，11/50 不能写成 11%或与完整基准结果直接排名。",
+        "语料只覆盖固定计算机科学全文，且难题经过对抗式筛选；Wide 金标准可能仍不穷尽，不能外推日常跨学科检索。"
+      ],
+      "implications": [
+        "复杂文献发现是构想、查新和自动评审之前必须单独测量的上游能力。",
+        "科研检索既要测唯一目标命中，也要测集合召回和正确弃答。"
+      ],
+      "paper_url": "https://arxiv.org/abs/2604.25256",
+      "source_note": "核验 arXiv:2604.25256v1 全文、完整与50题子集的不同分母、构造成本和难题筛选边界。",
+      "evidence_locations": [
+        "arXiv:2604.25256v1 §2.3/Table 1，PDF pp.5–6：600个Deep、400个Wide及3,692个Wide答案",
+        "§3.1–§3.4、Table 2–4 与 Figure 5，PDF pp.7–9：完整基准结果、50题端到端子集、开放网络比较和尝试次数",
+        "Appendix B、Table 5 与 Appendix D.1，PDF pp.14–16：固定语料、难例筛选、答案集边界、约6,700美元和580专家小时"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P1",
+        "Q": "Q2"
+      },
+      "authors": [
+        "Lei Xiong",
+        "Kun Luo",
+        "Ziyi Xia",
+        "Wenbo Zhang",
+        "Jin-Ge Yao",
+        "Zheng Liu",
+        "Jingying Shao",
+        "Jianlyu Chen",
+        "Hongjin Qian",
+        "Xi Yang",
+        "Qian Yu",
+        "Hao Li",
+        "Chen Yue",
+        "Xiaan Du",
+        "Yuyang Wang",
+        "Yesheng Liu",
+        "Haiyu Xu",
+        "Zhicheng Dou"
+      ],
+      "code_url": "https://github.com/CherYou/AutoResearchBench",
+      "tags": [
+        "复杂文献检索",
+        "集合召回",
+        "上游能力"
+      ]
+    },
+    {
+      "id": "researchclawbench",
+      "title": "ResearchClawBench: A Benchmark for End-to-End Autonomous Scientific Research",
+      "title_local": "ResearchClawBench：端到端自主科学研究基准",
+      "short_title": "ResearchClawBench",
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "preprint",
+      "source_type": "benchmark",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "paradigm-orchestration",
+        "domain-discovery"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "C",
+      "elevator": "把真实论文的目标答案隐藏起来，要求系统跨十个领域从文献与原始数据出发执行代码、生成结果和图，并交付完整研究报告。",
+      "problem": "单点问答或机器学习复现不能测量跨学科研究中从证据查找到可执行分析和报告的整条链。",
+      "mechanism": "专家从真实论文派生 40 个可执行任务和加权量表；所有系统运行同一环境，最终产物由参考答案锚定的模型裁判评分。",
+      "mechanism_steps": [
+        "隐藏目标论文并提供问题、文献、数据和环境",
+        "代理检索证据、编写并执行代码",
+        "生成结果文件、图和研究报告",
+        "按目标论文派生的加权量表评分"
+      ],
+      "evidence": [
+        "预印本覆盖 10 个领域、40 个真实论文派生任务，并评价 7 个代理家族与 17 个原生模型。",
+        "所有系统均运行40题；最强自主代理 Claude Code 平均 21.5/100，最强 ResearchHarness 组合平均 20.7/100。"
+      ],
+      "limitations": [
+        "任务主要是既有数据、代码和文献上的 dry-lab 再发现；超过50分也不等于发现经外部验证的新知识。",
+        "单一 GPT-5.1 裁判未报告与独立专家的一致性；论文还存在7个代理与8个配置、frontier mean 24.6与25.8的内部口径冲突。"
+      ],
+      "implications": [
+        "跨领域端到端执行仍远未达到目标论文级复现。",
+        "失败应按实验协议、证据匹配和科学核心缺失拆解，而非只检查是否写出报告。"
+      ],
+      "paper_url": "https://arxiv.org/abs/2606.07591",
+      "source_note": "核验 arXiv:2606.07591v5 全文；仅引用无内部冲突的单系统均值，并保留配置数和 frontier mean 异常。",
+      "evidence_locations": [
+        "arXiv:2606.07591v5 Abstract、Figure 1 与 Introduction，PDF pp.1–3：端到端任务定义及frontier口径之一",
+        "§3.1–§3.4、Table 2–3 与 Figure 4，PDF pp.6–9：10领域40任务、量表和50分边界",
+        "Table 5、§4.1–§4.2，PDF pp.10–11：所有系统40题及21.5/20.7单系统均值",
+        "§4.5/Figure 6 与 §6 Limitations，PDF pp.12–14：280次运行的失败类型、dry-lab和模型裁判限制"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P1",
+        "Q": "Q2"
+      },
+      "authors": [
+        "Wanghan Xu",
+        "Shuo Li",
+        "Tianlin Ye"
+      ],
+      "authors_truncated": true,
+      "author_count": 51,
+      "code_url": "https://github.com/InternScience/ResearchClawBench",
+      "related_ids": [
+        "paperbench",
+        "inquitree"
+      ],
+      "tags": [
+        "跨学科",
+        "端到端基准",
+        "研究报告"
+      ]
+    },
+    {
+      "id": "discoper",
+      "title": "Autonomous Scientific Discovery via Iterative Meta-Reflection",
+      "title_local": "通过迭代元反思进行自主科学发现",
+      "short_title": "DiscoPER",
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "preprint",
+      "source_type": "paper",
+      "primary_route": "domain-discovery",
+      "routes": [
+        "domain-discovery",
+        "ml-research-loop"
+      ],
+      "level": 2,
+      "tier": "core",
+      "evidence_level": "C",
+      "elevator": "不预设研究问题，让代理在生态观测数据中提出假设、执行统计代码，并定期反思已接受和拒绝的主张以继续探索。",
+      "problem": "多数自动研究循环只优化给定目标，难以评价代理能否从原始观察中主动形成问题和累积可检验解释。",
+      "mechanism": "DiscoPER 轮流提出假设与代码，在训练和固定留出划分上检验效应与显著性，每五轮汇总成功、失败、混杂和空白以重定向搜索。",
+      "mechanism_steps": [
+        "从多模态生态观测提出假设和统计代码",
+        "在训练与固定留出数据上执行检验",
+        "按效应量、p值和留出保持率筛选",
+        "每五轮元反思后继续提出新方向"
+      ],
+      "evidence": [
+        "iNatDisco-800 上找回 8/9 个已知模式，support rate 为 72.7%±3%；iNatDisco-50K 上找回 8/12，support rate 为 74.2%±3%。",
+        "每个设置运行100轮并重复3次；去掉反思后分别降为7/9和6/12。"
+      ],
+      "limitations": [
+        "support rate 是每次运行所提假设通过留出检验的比例，不是独立发现数量；固定留出集被100轮自适应重复使用且没有多重比较校正或最终封存测试集。",
+        "语义匹配由模型裁判完成，人工只核验强匹配；正文与附录还把取得主要结果的模型分别写成 Sonnet 4.6 和 4.5。"
+      ],
+      "implications": [
+        "元反思可帮助代理从孤立检验转向寻找空白、混杂和复合关系。",
+        "开放发现循环需要时间正确的最终封存验证，不能反复消费同一留出集。"
+      ],
+      "paper_url": "https://arxiv.org/abs/2607.01131",
+      "source_note": "核验 arXiv:2607.01131v1 全文、两个数据规模、三次重复、消融、反事实检查和重复使用留出集的边界。",
+      "evidence_locations": [
+        "arXiv:2607.01131v1 §3/Figure 2，PDF pp.3–4：提出—执行—筛选—每五轮反思的循环",
+        "§4.1–§4.3、Table 2 与 Figure 4，PDF pp.5–8：两个数据规模、8/9与8/12、support rate、去反思消融和合成反事实",
+        "Appendix A.1/Table A1、Appendix C.1、Appendix E，PDF pp.13、16–17、23：模型版本冲突、语义匹配与数据偏差限制"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P1",
+        "Q": "Q2"
+      },
+      "authors": [
+        "Bingchen Zhao",
+        "Sara Beery",
+        "Oisin Mac Aodha"
+      ],
+      "tags": [
+        "开放数据发现",
+        "元反思",
+        "适应性检验"
+      ]
+    },
+    {
+      "id": "badscientist",
+      "title": "BadScientist: Can a Research Agent Write Convincing but Unsound Papers that Fool LLM Reviewers?",
+      "title_local": "BadScientist：研究智能体能否用不可靠论文欺骗大模型评审",
+      "short_title": "BadScientist",
+      "year": 2026,
+      "venue": "ACL 2026",
+      "status": "peer-reviewed",
+      "source_type": "benchmark",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "paradigm-orchestration"
+      ],
+      "level": 0,
+      "tier": "core",
+      "evidence_level": "A",
+      "elevator": "主动生成带伪数据、图表和统计操纵的完整论文，测试自动评审器是否会在提出完整性担忧的同时仍给出接收级分数。",
+      "problem": "自动研究系统若与同类模型评审形成闭环，流畅而不可靠的稿件可能同时欺骗生成端和质量闸门。",
+      "mechanism": "生成代理在25个主题上应用六类操纵策略合成整篇论文；三模型评审面板按真实投稿校准阈值打分，再比较完整性担忧、接收率和两种缓解方法。",
+      "mechanism_steps": [
+        "按六类策略生成伪数据、图表与论文",
+        "通过编译和结构检查后送入三模型评审",
+        "用真实投稿校准接收级阈值",
+        "比较担忧、评分冲突与缓解检测"
+      ],
+      "evidence": [
+        "名义设计为25个主题×每策略4篇×6种设置，共600次尝试；最强策略在较宽阈值下报告82.0%接收率。",
+        "在50篇真实稿与50篇伪造稿的缓解集上，最佳 ReD 检测准确率为67%；其余所测模型更低。"
+      ],
+      "limitations": [
+        "只有结构有效稿进入评审，但论文没有逐策略披露实际有效稿 N；因此82.0%不能反推为精确82/100。",
+        "论文不执行真实代码或数据，只测三种模型和单轮评审；缓解标签与评价仍高度依赖模型，不能外推人类同行评议。"
+      ],
+      "implications": [
+        "自动评审的担忧文本与最终评分必须分开审计。",
+        "端到端研究系统需要可执行证据、数据溯源和独立红队，而非只依赖模型互评。"
+      ],
+      "paper_url": "https://aclanthology.org/2026.acl-long.1134/",
+      "source_note": "核验 ACL 2026 正式全文；保留名义600次生成与实际有效稿分母未披露的区别。",
+      "evidence_locations": [
+        "ACL 2026正式PDF §3–§4.1，pp.24714–24717：六类操纵、三模型面板、200篇校准集和接收阈值",
+        "Table 1–2 与 §4.2，p.24718：最高82.0%接收率及完整性担忧与接收评分冲突",
+        "§5/Table 3–4 与 Limitations，pp.24719–24721：100篇缓解集、检测结果与范围边界",
+        "Appendix B p.24727：25个种子主题；正文未给结构检查后的逐策略有效稿分母"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "doi": "10.18653/v1/2026.acl-long.1134",
+      "authors": [
+        "Fengqing Jiang",
+        "Yichen Feng",
+        "Yuetai Li",
+        "Luyao Niu",
+        "Basel Alomair",
+        "Radha Poovendran"
+      ],
+      "related_ids": [
+        "automatic-review-faulty-reasoning"
+      ],
+      "tags": [
+        "科研诚信",
+        "自动评审",
+        "红队"
+      ]
+    },
+    {
+      "id": "papermind",
+      "title": "PAPERMIND: Benchmarking Agentic Reasoning and Critique over Scientific Papers in Multimodal LLMs",
+      "title_local": "PAPERMIND：多模态模型对科学论文的智能体推理与批判基准",
+      "short_title": "PAPERMIND",
+      "year": 2026,
+      "venue": "Findings of ACL 2026",
+      "status": "peer-reviewed",
+      "source_type": "benchmark",
+      "primary_route": "knowledge-ideation",
+      "routes": [
+        "knowledge-ideation",
+        "evaluation-governance"
+      ],
+      "level": 0,
+      "tier": "bridge",
+      "evidence_level": "A",
+      "elevator": "在论文已经给定后，分别测试图表解释、实验结果理解、跨源证据检索和回应真实审稿批评四种上游认知能力。",
+      "problem": "会检索或生成评论不代表代理真正理解论文中的图表、证据链和审稿质疑。",
+      "mechanism": "基准从506篇七领域论文构造四类任务，并让多模态模型读取PDF、调用外部工具或回答真实审稿问题，以F1和模型裁判双重评分。",
+      "mechanism_steps": [
+        "从论文图表和正文构造理解任务",
+        "要求模型解释实验或检索跨源证据",
+        "用真实审稿问题测试批判回应",
+        "比较F1与模型裁判分数"
+      ],
+      "evidence": [
+        "首三类任务来自506篇、七个领域论文；四类任务合计3,022个实例。",
+        "不同指标的模型排序不一致：例如跨源任务最高F1为0.380，而最高模型裁判分来自另一模型。"
+      ],
+      "limitations": [
+        "评价完全依赖模型裁判，未报告跨题型稳定性或与独立人类偏好的一致性；批判任务只来自计算机科学。",
+        "论文页数和解析质量筛选带来格式偏差，原文图注或讨论段作为答案也更接近文本重建而非发现新知识。"
+      ],
+      "implications": [
+        "论文发现、论文理解和主动发现逻辑错误是三个不同能力，应分别评价。",
+        "F1与模型裁判不一致时，不能只选对系统有利的单一指标。"
+      ],
+      "paper_url": "https://aclanthology.org/2026.findings-acl.508/",
+      "source_note": "核验 Findings of ACL 2026 正式全文；arXiv:2604.21304v2 合并到正式版本族。",
+      "evidence_locations": [
+        "Findings of ACL 2026正式PDF Figure 2 p.10459 与 §3/Figure 3 pp.10460–10461：四类任务及3,022个实例",
+        "Table 2 p.10461、Table 3 p.10462 与 §4.3/Figures 4–6 pp.10462–10464：模型结果及F1与模型裁判排序差异",
+        "Limitations p.10465 与 Appendix D.1–D.2/Table 6 p.10469：506篇七领域论文、模型裁判和格式选择边界"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D2",
+        "P": "P2",
+        "Q": "Q2"
+      },
+      "doi": "10.18653/v1/2026.findings-acl.508",
+      "preprint_url": "https://arxiv.org/abs/2604.21304",
+      "authors": [
+        "Yanjun Zhao",
+        "Tianxin Wei",
+        "Jiaru Zou",
+        "Xuying Ning",
+        "Yuanchen Bei",
+        "Lingjie Chen",
+        "Simmi Rana",
+        "Wendy H. Yang",
+        "Hanghang Tong",
+        "Jingrui He"
+      ],
+      "related_ids": [
+        "autoresearchbench",
+        "automatic-review-faulty-reasoning"
+      ],
+      "tags": [
+        "论文理解",
+        "跨源证据",
+        "批判推理"
+      ]
+    },
+    {
+      "id": "cellvoyager",
+      "title": "CellVoyager: AI CompBio agent generates new insights by autonomously analyzing biological data",
+      "title_local": "CellVoyager：自主分析生物数据并生成候选新见解的计算生物学智能体",
+      "short_title": "CellVoyager",
+      "year": 2026,
+      "venue": "Nature Methods",
+      "status": "peer-reviewed",
+      "source_type": "paper",
+      "primary_route": "domain-discovery",
+      "routes": [
+        "domain-discovery",
+        "evaluation-governance"
+      ],
+      "level": 2,
+      "tier": "bridge",
+      "evidence_level": "A",
+      "elevator": "面向单细胞数据，把假设、分析计划、自我批评、代码执行、图像解释和重规划连成专业计算发现循环。",
+      "problem": "通用代码代理缺少单细胞分析知识，也难以根据中间图表和失败结果持续修订生物学假设。",
+      "mechanism": "用户提供已处理数据、背景和既有分析；代理提出假设与计划、执行代码、用视觉模型解释结果，再据此重规划并输出候选解释与后续实验建议。",
+      "mechanism_steps": [
+        "读取单细胞数据、论文背景和既有分析",
+        "提出假设并自我批评分析计划",
+        "生成执行代码并解释图表或失败",
+        "根据结果重规划并形成候选见解"
+      ],
+      "evidence": [
+        "CellBench 覆盖76项研究；在只给背景条件下，相对所测 GPT-4o/o3-mini 基线最高改善约23%。",
+        "三个案例中专家创造性平均2.8/4，15个假设有12个被原研究作者认为值得继续探索；外部改造基准则显示明显较低表现。"
+      ],
+      "limitations": [
+        "评价者主要是原研究作者，没有湿实验验证；值得探索的假设不等于发现已经成立。",
+        "独立 HeurekaBench 移除了原工作流的假设提议阶段，因而只能作为受改造条件下的反向证据；系统也受固定软件环境、代码失败和视觉误读限制。"
+      ],
+      "implications": [
+        "专业数据分析代理可形成数字闭环，但新见解仍需要外部实验和盲评。",
+        "同一系统在原生任务和改造外部基准上的差异必须并列呈现。"
+      ],
+      "paper_url": "https://www.nature.com/articles/s41592-026-03029-6",
+      "source_note": "版本族核验：Nature Methods 正式元数据、摘要与图1–6；正文位置来自作者 bioRxiv 预印本；HeurekaBench 提供独立但任务经改造的外部评测。",
+      "evidence_locations": [
+        "Nature Methods Abstract/Figure 1 与 bioRxiv §3.1 pp.3–4：输入边界和计划—自评—代码—视觉解释—重规划循环",
+        "Nature Methods Figure 2：76项研究的CellBench及仅背景条件下最高约23%相对改善",
+        "Nature Methods Figure 3 与 bioRxiv §6 p.13：三个案例、创造性2.8/4及15个假设中12个值得后续探索",
+        "HeurekaBench §4.2/Table 1：在改造后的22个开放题和18个选择题上，开放题2.03/5、选择题准确率27.78%，并指出反馈利用和代码修复限制"
+      ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V4",
+        "D": "D3",
+        "P": "P2",
+        "Q": "Q1"
+      },
+      "doi": "10.1038/s41592-026-03029-6",
+      "preprint_url": "https://doi.org/10.1101/2025.06.03.657517",
+      "authors": [
+        "Samuel Alber",
+        "Bowen Chen",
+        "Eric Sun",
+        "Alina Isakova",
+        "Aaron J. Wilk",
+        "James Zou"
+      ],
+      "related_ids": [
+        "virtual-lab",
+        "popper"
+      ],
+      "tags": [
+        "单细胞分析",
+        "专业智能体",
+        "外部反证"
+      ]
+    },
+    {
+      "id": "risks-ai-scientists",
+      "title": "Risks of AI scientists: prioritizing safeguarding over autonomy",
+      "title_local": "人工智能科学家的风险：安全保障优先于自治",
+      "short_title": "人工智能科学家风险框架",
+      "year": 2025,
+      "venue": "Nature Communications",
+      "status": "peer-reviewed",
+      "source_type": "perspective",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "physical-lab"
+      ],
+      "level": 0,
+      "tier": "bridge",
+      "evidence_level": "B",
+      "elevator": "从用户意图、科学领域和外部环境追踪风险，提出人类监管、代理对齐和代理—环境调节三元防护。",
+      "problem": "研究代理把模型错误放大到工具、代码和实体环境，传统只看模型输出的安全框架不足。",
+      "mechanism": "论文归纳化学、生物、放射、物理、信息与新兴技术风险，并把日志、权限和环境反馈映射到控制面。",
+      "mechanism_steps": [
+        "按意图、领域和环境归类风险",
+        "定位代理与工具链脆弱点",
+        "提出三元防护与审计控制"
+      ],
+      "evidence": [
+        "Nature Communications 正式观点论文系统列出多领域风险和治理层。"
+      ],
+      "limitations": [
+        "这是范围综述与观点框架，不是安全机制有效性的实验验证。",
+        "风险分类不能给出现有系统事故率。"
+      ],
+      "implications": [
+        "自治升级应以安全门槛为前置条件。",
+        "审计日志、最小权限和环境联锁需要共同设计。"
+      ],
+    "paper_url": "https://www.nature.com/articles/s41467-025-63913-1",
+    "source_note": "核验 Nature Communications 16, 8317 正式全文与 DOI。",
+    "evidence_locations": [
+      "Nature Communications 正式全文‘Problem scope’与 Fig. 1：用户意图、科学领域和环境影响三轴风险范围",
+      "正式全文‘Risks of AI scientists’：化学、生物、放射、物理、信息及新兴技术风险类型",
+      "正式全文‘Safeguarding AI scientists’与 Fig. 2：人类监管、代理对齐及代理—环境调节的三元防护"
+    ],
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D1",
+        "P": "P2",
+        "Q": "Q1"
+      },
+      "doi": "10.1038/s41467-025-63913-1",
+      "tags": [
+        "治理",
+        "最小权限",
+        "双重用途"
+      ]
+    },
+    {
+      "id": "illusions-understanding",
+      "title": "Artificial intelligence and illusions of understanding in scientific research",
+      "title_local": "科学研究中的人工智能与理解幻觉",
+      "short_title": "理解幻觉",
+      "year": 2024,
+      "venue": "Nature",
+      "status": "peer-reviewed",
+      "source_type": "perspective",
+      "primary_route": "evaluation-governance",
+      "routes": [
+        "evaluation-governance",
+        "knowledge-ideation"
+      ],
+      "level": 0,
+      "tier": "background",
+      "evidence_level": "B",
+      "elevator": "指出人工智能可能提升产出却制造理解幻觉和科学单一文化，使方法、问题和观点过度集中。",
+      "problem": "生产率和客观性叙事可能让科学共同体高估自己对自动化结果的理解。",
+      "mechanism": "论文分析人工智能作为工具、代理和认知替代物的不同想象，连接认知局限、探索广度与群体知识结构。",
+      "mechanism_steps": [
+        "归纳科学界对人工智能的主要想象",
+        "分析理解幻觉形成机制",
+        "推导科学单一文化和错误脆弱性"
+      ],
+      "evidence": [
+        "Nature 正式观点论文给出理解幻觉与科学单一文化的概念框架。"
+      ],
+      "limitations": [
+        "不是 Auto-Research 系统的实证评价。",
+        "宏观认识论风险难以直接转成单一量化指标。"
+      ],
+      "implications": [
+        "研究地图必须同时记录产出量和知识多样性。",
+        "自动化应增强可解释证据链，而非只增加论文数量。"
+      ],
+      "paper_url": "https://www.nature.com/articles/s41586-024-07146-0",
+      "source_note": "核验 Nature 627, 49–58 正式全文、论点与 DOI。",
+      "source_tier": "T1",
+      "verification_state": "full-text-checked",
+      "evidence_vector": {
+        "V": "V3",
+        "D": "D1",
+        "P": "P2",
+        "Q": "Q1"
+      },
+      "doi": "10.1038/s41586-024-07146-0",
+      "authors": [
+        "Lisa Messeri",
+        "M. J. Crockett"
+      ],
+      "tags": [
+        "认识论",
+        "科学单一文化",
+        "理解幻觉"
+      ]
+    }
+  ]
+}
